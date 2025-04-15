@@ -41,22 +41,22 @@ function addVehicle(type) {
                     <span class="tooltip">Eliminar Carreta</span>
                     </button><br><br>
                     
-            <label for="placa">Placa${contadorVehiculos}:</label>
-            <input class="input" type="text" name="placa${contadorVehiculos}" required><br><br>
-            <label for="ett">ETT${contadorVehiculos}:</label>
-            <input class="input" type="text" name="ett${contadorVehiculos}" required><br><br>
-            <label for="habilitacion">HABILITACION${contadorVehiculos}:</label>
-            <input class="input" type="text" name="habilitacion${contadorVehiculos}" required><br><br>
-            <label for="itv">ITV${contadorVehiculos}:</label>
-            <input class="input" type="text" name="itv${contadorVehiculos}" required><br><br>
-            <label for="soat">SOAT${contadorVehiculos}:</label>
-            <input class="input" type="text" name="soat${contadorVehiculos}" required><br><br>
-            <label for="uso">USO${contadorVehiculos}:</label>
-            <input class="input" type="text" name="uso${contadorVehiculos}" required><br><br>
-            <label for="gps">GPS${contadorVehiculos}:</label>
-            <input class="input" type="text" name="gps${contadorVehiculos}" required><br><br>
-            <label for="sentido">SENTIDO${contadorVehiculos}:</label>
-            <input class="input" type="text" name="sentido${contadorVehiculos}" required><br><br>
+            <label for="placa">PLACAformulario${contadorVehiculos}</label>
+            <input class="input" type="text" name="PLACA${contadorVehiculos}"><br><br>
+            <label for="ett">ETT${contadorVehiculos}</label>
+            <input class="input" type="text" name="ETT${contadorVehiculos}"><br><br>
+            <label for="habilitacion">HABILITACION${contadorVehiculos}</label>
+            <input class="input" type="text" name="HABILITACION${contadorVehiculos}"><br><br>
+            <label for="itv">ITV${contadorVehiculos}</label>
+            <input class="input" type="text" name="ITV${contadorVehiculos}"><br><br>
+            <label for="soat">SOAT${contadorVehiculos}</label>
+            <input class="input" type="text" name="SOAT${contadorVehiculos}"><br><br>
+            <label for="uso">USO${contadorVehiculos}</label>
+            <input class="input" type="text" name="USO${contadorVehiculos}"><br><br>
+            <label for="gps">GPS${contadorVehiculos}</label>
+            <input class="input" type="text" name="GPS${contadorVehiculos}"><br><br>
+            <label for="sentido">SENTIDO${contadorVehiculos}</label>
+            <input class="input" type="text" name="SENTIDO${contadorVehiculos}">
             <div id="carretaContainer${contadorVehiculos}"></div>
 
 
@@ -491,7 +491,7 @@ vehiculosElements.forEach((vehiculo, index) => {
         tipoVehiculo = vehiculo.querySelector(`#tipoVehiculo${index + 1}`).value;
         let categoria = vehiculo.querySelector('#categoria').value;
         let permisoMTC = vehiculo.querySelector('#permisomtc').value;
-        vehiculos += `Vehículo ${index + 1} (Tipo: ${tipoVehiculo}, Categoría: ${categoria}, Permiso MTC: ${permisoMTC}):\n`;
+        vehiculos += `*\n**Vehículopublicado ${index + 1}:* ${tipoVehiculo}(${categoria})(${permisoMTC})\n`;
     } else if (vehiculo.querySelector(`#tipoVehiculoPasajeros${index + 1}`)) {
         tipoVehiculo = vehiculo.querySelector(`#tipoVehiculoPasajeros${index + 1}`).value;
         let categoria = vehiculo.querySelector('#categoria').value;
@@ -506,34 +506,51 @@ vehiculosElements.forEach((vehiculo, index) => {
         let categoria = vehiculo.querySelector('#categoria').value;
         vehiculos += `Vehículo ${index + 1} (Tipo: ${tipoVehiculo}, Categoría: ${categoria}\n`;
     }
-    // Continuar con else if para otros tipos de vehículos si es necesario.
-
+    /*// Continuar con else if para otros tipos de vehículos si es necesario.
     const inputs = vehiculo.querySelectorAll('input[type="text"]');
     inputs.forEach(input => {
         vehiculos += `${input.name}: ${input.value}\n`;
+    });
+});*/
+    // Agregar los campos del vehículo con el formato deseado
+    const inputs = vehiculo.querySelectorAll('input[type="text"]');
+    inputs.forEach(input => {
+        const fieldName = input.name.replace(/\d+$/, ''); // Elimina el número al final del nombre
+        const fieldValue = input.value;
+        vehiculos += `**${fieldName.toUpperCase()}${index + 1}:* ${fieldValue}\n`;
     });
 });
 
      
 
-    let comisarias = "";
+    let comisarias = "*\n";
     const comisariaElements = document.querySelectorAll('.comisaria-section');
     comisariaElements.forEach(comisaria => {
         const inputs = comisaria.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
         inputs.forEach(input => {
-            comisarias += `${input.name}: ${input.value}`;
+            /*comisarias += `${input.name}: ${input.value}`;
         });
-    });
+    });*/
+    comisarias += `${input.name}: ${input.value}\n`; // Agrega un salto de línea después de cada campo
+});
+comisarias += "\n"; // Agrega una línea en blanco después de cada comisaría
+});
 
-    let fuentes = "";
+    let fuentes = "*\n";
     const fuenteElements = document.querySelectorAll('.fuente-section');
     fuenteElements.forEach((fuente, index) => {
         fuentes += `Fuente ${index + 1}:`;
         const inputs = fuente.querySelectorAll('input[type="text"], input[type="tel"], input[type="number"]');
         inputs.forEach(input => {
-            fuentes += `${input.name}: ${input.value}\n`;
+            /*fuentes += `${input.name}: ${input.value}\n`;
         });
-    });
+    });*/
+    const fieldName = input.name.replace(/\d+$/, ''); // Elimina el número al final del nombre
+    const fieldValue = input.value;
+    fuentes += `\n${fieldName}${index + 1}: ${fieldValue}`; // Agrega el nombre del campo y su valor
+});
+fuentes += "\n"; // Agrega un salto de línea al final de cada fuente
+});
     //ESTE ES EL CODIGO DE COMO SE PULICARA LA ALERTA
     const mensaje = `
 *${tipoAlerta} CGM ${numeroAlerta} REPORTE FINAL ${colorEmoji}*\n
@@ -553,15 +570,12 @@ vehiculosElements.forEach((vehiculo, index) => {
 **Coordenadas:** ${coordenadas}
 **Ubicación:** "KM" ${km} DE LA VÍA NACIONAL CON *CÓDIGO* ${codigoRuta}, *DISTRITO* ${distrito}, *PROVINCIA* ${provincia}, *REGIÓN* ${region}
 **Link:** ${link}
-*
 ${vehiculos}
 *
 **Detalle:** ${detalle}
-*
 ${comisarias}
-*
 ${fuentes}
-\n
+
 *Atte*\n${nombreOperador}
 Centro de Gestión y Monitoreo - ${cgm}
 SUBGERENCIA DE SUPERVISIÓN ELECTRÓNICA
