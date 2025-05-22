@@ -32,12 +32,12 @@ function addVehicle(type) {
             </select>
 
                     <button class="addButton" onclick="addCarreta(this, ${contadorVehiculos})" type="button">
-                    <img src="img/semi.svg" alt_"" width:"30px" height="30px" class"addCarreta">
+                    <img src="img/semi.svg" alt="" width="30px" height="30px" class="addCarreta">
                     <span class="tooltip">Agregar Carreta</span>
                     </button>
 
                     <button class="deleteButton" onclick="removeCarreta(this, ${contadorVehiculos})" type="button">
-                    <img src="img/eliminar.svg" alt:"" width:"30px" height="30px" class"removeCarreta">
+                    <img src="img/eliminar.svg" alt="" width="30px" height="30px" class="removeCarreta">
                     <span class="tooltip">Eliminar Carreta</span>
                     </button><br><br>
                     
@@ -81,6 +81,8 @@ function addVehicle(type) {
             <option value="PNW">PNW</option>
             </select><br><br>
 
+            <label for="HOJA DE RUTA">HOJA DE RUTA${contadorVehiculos}:</label>
+            <input class="input" type="text" name="HOJA DE RUTA${contadorVehiculos}" required><br><br>
             <label for="placa">Placa${contadorVehiculos}:</label>
             <input class="input" type="text" name="placa${contadorVehiculos}" required><br><br>
             <label for="ett">ETT${contadorVehiculos}:</label>
@@ -105,12 +107,12 @@ function addVehicle(type) {
             <select class="styled-select" id="tipoVehiculoParticular${contadorVehiculos}" name="tipoVehiculoParticular${contadorVehiculos}" required>
             <option value="Automovil">Automóvil</option>
             <option value="Motocicleta">Motocicleta</option>
-            </select><br><br>
+            </select>
 
             <select class="styled-select" id="categoria" name="categoria" required>
             <option value="N2">N2</option>
             <option value="N3">N3</option>
-            </select>
+            </select><br><br>
 
             <label for="vehiculo">Vehículo${contadorVehiculos}:</label>
             <input class="input" type="text" name="vehiculo${contadorVehiculos}" required><br><br>
@@ -496,15 +498,15 @@ vehiculosElements.forEach((vehiculo, index) => {
         tipoVehiculo = vehiculo.querySelector(`#tipoVehiculoPasajeros${index + 1}`).value;
         let categoria = vehiculo.querySelector('#categoria').value;
         let permisoMTC = vehiculo.querySelector('#permisomtc').value;
-        vehiculos += `Vehículo ${index + 1} (Tipo: ${tipoVehiculo}, Categoría: ${categoria}, Permiso MTC: ${permisoMTC}):\n`;
+        vehiculos += `**Vehículo ${index + 1}:* ${tipoVehiculo}(${categoria})(${permisoMTC})\n`;
     }else if (vehiculo.querySelector(`#tipoVehiculoParticular${index + 1}`)) {
         tipoVehiculo = vehiculo.querySelector(`#tipoVehiculoParticular${index + 1}`).value;
         let categoria = vehiculo.querySelector('#categoria').value;
-        vehiculos += `Vehículo ${index + 1} (Tipo: ${tipoVehiculo}, Categoría: ${categoria}\n`;
+        vehiculos += `**Vehículo ${index + 1}:* ${tipoVehiculo}(${categoria})\n`;
     } else if (vehiculo.querySelector(`#tipoVehiculoInternacional${index + 1}`)) {
         tipoVehiculo = vehiculo.querySelector(`#tipoVehiculoInternacional${index + 1}`).value;
         let categoria = vehiculo.querySelector('#categoria').value;
-        vehiculos += `Vehículo ${index + 1} (Tipo: ${tipoVehiculo}, Categoría: ${categoria}\n`;
+        vehiculos += `**Vehículo ${index + 1}:* ${tipoVehiculo}(${categoria})\n`;
     }
     /*// Continuar con else if para otros tipos de vehículos si es necesario.
     const inputs = vehiculo.querySelectorAll('input[type="text"]');
@@ -520,39 +522,77 @@ vehiculosElements.forEach((vehiculo, index) => {
         vehiculos += `**${fieldName.toUpperCase()}${index + 1}:* ${fieldValue}\n`;
     });
 });
+   //  let comisarias = "*\n";
+   // const comisariaElements = document.querySelectorAll('.comisaria-section');
+   // comisariaElements.forEach(comisaria => {
+   //     const inputs = comisaria.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
+   //     inputs.forEach(input => {
+            /*comisarias += `${input.name}: ${input.value}\n`;
+        });
+    });*/
+   //  comisarias += `${input.name}: ${input.value}\n`; // Agrega un salto de línea después de cada campo
+   //});
+   //comisarias += "\n"; // Agrega una línea en blanco después de cada comisaría
+   //});
 
-     
-
-    let comisarias = "*\n";
-    const comisariaElements = document.querySelectorAll('.comisaria-section');
+let comisarias = ""; // INICIALIZA COMO CADENA VACÍA
+const comisariaElements = document.querySelectorAll('.comisaria-section');
+if (comisariaElements.length > 0) { // SOLO SI HAY ELEMENTOS
+    comisarias = "*\n"; // COMIENZA CON EL SEPARADOR Y SALTO DE LÍNEA
     comisariaElements.forEach(comisaria => {
         const inputs = comisaria.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
         inputs.forEach(input => {
-            /*comisarias += `${input.name}: ${input.value}`;
+            comisarias += `${input.name}: ${input.value}\n`;
         });
-    });*/
-    comisarias += `${input.name}: ${input.value}\n`; // Agrega un salto de línea después de cada campo
-});
-comisarias += "\n"; // Agrega una línea en blanco después de cada comisaría
-});
+    });
+}
 
-    let fuentes = "*\n";
-    const fuenteElements = document.querySelectorAll('.fuente-section');
-    fuenteElements.forEach((fuente, index) => {
-        fuentes += `Fuente ${index + 1}:`;
-        const inputs = fuente.querySelectorAll('input[type="text"], input[type="tel"], input[type="number"]');
-        inputs.forEach(input => {
+
+//    let fuentes = "*\n";
+//    const fuenteElements = document.querySelectorAll('.fuente-section');
+//    fuenteElements.forEach((fuente, index) => {
+//        fuentes += `Fuente ${index + 1}:`;
+//        const inputs = fuente.querySelectorAll('input[type="text"], input[type="tel"], input[type="number"]');
+//        inputs.forEach(input => {
             /*fuentes += `${input.name}: ${input.value}\n`;
         });
     });*/
-    const fieldName = input.name.replace(/\d+$/, ''); // Elimina el número al final del nombre
-    const fieldValue = input.value;
-    fuentes += `\n${fieldName}${index + 1}: ${fieldValue}`; // Agrega el nombre del campo y su valor
-});
-fuentes += "\n"; // Agrega un salto de línea al final de cada fuente
-});
+//    const fieldName = input.name.replace(/\d+$/, ''); // Elimina el número al final del nombre
+//    const fieldValue = input.value;
+//    fuentes += `\n${fieldName}${index + 1}: ${fieldValue}`; // Agrega el nombre del campo y su valor
+//});
+//fuentes += "\n"; // Agrega un salto de línea al final de cada fuente
+//});
+
+
+let fuentes = ""; // INICIALIZA COMO CADENA VACÍA
+const fuenteElements = document.querySelectorAll('.fuente-section');
+if (fuenteElements.length > 0) { // SOLO SI HAY ELEMENTOS
+    fuentes = "*\n"; // COMIENZA CON EL SEPARADOR Y SALTO DE LÍNEA
+    fuenteElements.forEach((fuente, index) => {
+        // Usamos el número del H3 para la consistencia, ya que contadorFuentes se resetea en la renumeración.
+        const fuenteNumeroMatch = fuente.querySelector('h3').textContent.match(/\d+/);
+        const fuenteNumero = fuenteNumeroMatch ? fuenteNumeroMatch[0] : index + 1;
+
+        fuentes += `Fuente ${fuenteNumero}:`; // Sin salto de línea aquí
+        const inputs = fuente.querySelectorAll('input[type="text"], input[type="tel"], input[type="number"]');
+        inputs.forEach(input => {
+            const fieldName = input.name.replace(/\d+$/, '');
+            const fieldValue = input.value;
+            // Asumimos que el input name es como "fuenteN", "telefonoN", etc.
+            // y queremos "fuente: VALOR", "telefono: VALOR"
+            const labelName = fieldName.replace(`${fuenteNumero}`, ''); // Quita el número del nombre del campo si existe
+            fuentes += `\n${labelName}: ${fieldValue}`; // Salto de línea ANTES de cada campo
+        });
+        fuentes += "\n"; // Salto de línea al final de cada fuente
+    });
+}
+
+
+
+
     //ESTE ES EL CODIGO DE COMO SE PULICARA LA ALERTA
-    const mensaje = `
+/*    const mensaje = `
 *${tipoAlerta} CGM ${numeroAlerta} REPORTE FINAL ${colorEmoji}*\n
 **Versión:** *${versionAlerta}*
 **Consecuencia:** ${consecuenciaAlerta}
@@ -575,11 +615,40 @@ ${vehiculos}
 **Detalle:** ${detalle}
 ${comisarias}
 ${fuentes}
-
+*
 *Atte*\n${nombreOperador}
 Centro de Gestión y Monitoreo - ${cgm}
 SUBGERENCIA DE SUPERVISIÓN ELECTRÓNICA
+`;*/
+
+
+//ESTE ES EL CODIGO DE COMO SE PULICARA LA ALERTA
+const mensaje = `
+*${tipoAlerta} CGM ${numeroAlerta} REPORTE FINAL ${colorEmoji}*
+**Versión:** *${versionAlerta}*
+**Consecuencia:** ${consecuenciaAlerta}
+**Fallecidos:**\t${numFallecidos}
+**Nombres:**\t${fallecidos}
+**Heridos:**\t${numHeridos}
+**Nombres:**\t${heridos}
+**Modalidad:** ${modalidad}
+**Fecha conocimiento:**\t${fechaConocimientoFormatted}
+**Hora conocimiento:** ${horaConocimiento}
+**Fuente conocimiento:** ${fuenteConocimiento}
+**Fecha accidente:** ${fechaAccidenteFormatted}
+**Fuente accidente:** ${fuenteAccidente}
+**Hora accidente:** ${horaAccidente}
+**Coordenadas:** ${coordenadas}
+**Ubicación:** "KM" ${km} DE LA VÍA NACIONAL CON *CÓDIGO* ${codigoRuta}, *DISTRITO* ${distrito}, *PROVINCIA* ${provincia}, *REGIÓN* ${region}
+**Link:** ${link}
+${vehiculos}* 
+**Detalle:** ${detalle}
+${comisarias}${fuentes}*
+*Atte*\n${nombreOperador}
+Centro de Gestión y Monitoreo ${cgm}
+SUBGERENCIA DE SUPERVISIÓN ELECTRÓNICA
 `;
+
 document.getElementById('resultado').textContent = mensaje;
 }
 //boton copiar
