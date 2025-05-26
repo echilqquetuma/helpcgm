@@ -14,33 +14,14 @@ function addVehicle(type) {
 
     if (type === 'mercancias') {
         vehicleSection.innerHTML = `
-            <h3>Vehículo de Mercancías ${nuevoIndiceVehiculo}</h3>
+            <h4>Vehículo de Mercancías ${nuevoIndiceVehiculo}</h4>
             <label for="tipoVehiculo${nuevoIndiceVehiculo}">Tipo de Vehículo:</label>
             <select class="styled-select" id="tipoVehiculo${nuevoIndiceVehiculo}" name="tipoVehiculo${nuevoIndiceVehiculo}" required>
-                <option value="CAMION">CAMIÓN</option>
-                <option value="CAMION AUXILIO MECANICO">CAMIÓN AUXILIO MECÁNICO</option>
-                <option value="CAMION BARANDA">CAMIÓN BARANDA</option>
-                <option value="CAMION CISTERNA">CAMIÓN CISTERNA</option>
-                <option value="CAMION CISTERNA COMBUSTIBLE">CAMIÓN CISTERNA COMBUSTIBLE</option>
-                <option value="CAMION DE BOMBEROS">CAMIÓN DE BOMBEROS</option>
-                <option value="CAMION GRUA">CAMIÓN GRÚA</option>
-                <option value="CAMION MEZCLADOR">CAMIÓN MEZCLADOR</option>
-                <option value="CAMION PLATAFORMA">CAMIÓN PLATAFORMA</option>
-                <option value="CAMION PORTATROPA">CAMIÓN PORTATROPA</option>
-                <option value="CAMION TANQUE CORROSIVO">CAMIÓN TANQUE CORROSIVO</option>
-                <option value="CAMION TANQUE DE GLP">CAMIÓN TANQUE DE GLP</option>
-                <option value="CAMION TANQUE DE GNV">CAMIÓN TANQUE DE GNV</option>
-                <option value="CAMION VOLQUETE">CAMIÓN VOLQUETE</option>
-                <option value="CAMION CAÑERO">CAMIÓN CAÑERO</option>
-                <option value="COMPACTADOR">COMPACTADOR (CAMIÓN DE BASURA)</option>
-                <option value="FURGON">FURGÓN</option>
-                <option value="FURGON FRIGORIFICO">FURGÓN FRIGORÍFICO</option>
-                <option value="FURGON ISOTERMICO">FURGÓN ISOTÉRMICO</option>
-                <option value="REMOLCADOR">REMOLCADOR</option>
+                <option value="Camion Furgon">Camión Furgón</option>
+                <option value="Semirremolque">Semirremolque</option>
             </select>
             <label for="categoria${nuevoIndiceVehiculo}">Categoría:</label>
             <select class="styled-select" id="categoria${nuevoIndiceVehiculo}" name="categoria${nuevoIndiceVehiculo}" required>
-                <option value="N1">N1</option>
                 <option value="N2">N2</option>
                 <option value="N3">N3</option>
             </select>
@@ -57,22 +38,22 @@ function addVehicle(type) {
                 <img src="img/eliminar.svg" alt="Eliminar Carreta" width="30px" height="30px" class="removeCarreta">
                 <span class="tooltip">Eliminar Carreta</span>
             </button><br><br>
-            <label for="PLACA${nuevoIndiceVehiculo}">PLACA ${nuevoIndiceVehiculo}</label>
-            <input class="input" type="text" id="PLACA ${nuevoIndiceVehiculo}" name="PLACA${nuevoIndiceVehiculo}"><br><br>
-            <label for="ETT${nuevoIndiceVehiculo}">ETT ${nuevoIndiceVehiculo}</label>
-            <input class="input" type="text" id="ETT ${nuevoIndiceVehiculo}" name="ETT${nuevoIndiceVehiculo}"><br><br>
-            <label for="HABILITACION${nuevoIndiceVehiculo}">HABILITACION ${nuevoIndiceVehiculo}</label>
-            <input class="input" type="text" id="HABILITACION ${nuevoIndiceVehiculo}" name="HABILITACION${nuevoIndiceVehiculo}"><br><br>
-            <label for="ITV${nuevoIndiceVehiculo}">ITV ${nuevoIndiceVehiculo}</label>
-            <input class="input" type="text" id="ITV ${nuevoIndiceVehiculo}" name="ITV${nuevoIndiceVehiculo}"><br><br>
-            <label for="SOAT${nuevoIndiceVehiculo}">SOAT ${nuevoIndiceVehiculo}</label>
-            <input class="input" type="text" id="SOAT ${nuevoIndiceVehiculo}" name="SOAT${nuevoIndiceVehiculo}"><br><br>
-            <label for="USO${nuevoIndiceVehiculo}">USO ${nuevoIndiceVehiculo}</label>
-            <input class="input" type="text" id="USO ${nuevoIndiceVehiculo}" name="USO${nuevoIndiceVehiculo}"><br><br>
-            <label for="GPS${nuevoIndiceVehiculo}">GPS ${nuevoIndiceVehiculo}</label>
-            <input class="input" type="text" id="GPS ${nuevoIndiceVehiculo}" name="GPS${nuevoIndiceVehiculo}"><br><br>
-            <label for="SENTIDO${nuevoIndiceVehiculo}">SENTIDO ${nuevoIndiceVehiculo}</label>
-            <input class="input" type="text" id="SENTIDO ${nuevoIndiceVehiculo}" name="SENTIDO${nuevoIndiceVehiculo}">
+            <label for="PLACA${nuevoIndiceVehiculo}">PLACAformulario${nuevoIndiceVehiculo}</label>
+            <input class="input" type="text" id="PLACA${nuevoIndiceVehiculo}" name="PLACA${nuevoIndiceVehiculo}"><br><br>
+            <label for="ETT${nuevoIndiceVehiculo}">ETT${nuevoIndiceVehiculo}</label>
+            <input class="input" type="text" id="ETT${nuevoIndiceVehiculo}" name="ETT${nuevoIndiceVehiculo}"><br><br>
+            <label for="HABILITACION${nuevoIndiceVehiculo}">HABILITACION${nuevoIndiceVehiculo}</label>
+            <input class="input" type="text" id="HABILITACION${nuevoIndiceVehiculo}" name="HABILITACION${nuevoIndiceVehiculo}"><br><br>
+            <label for="ITV${nuevoIndiceVehiculo}">ITV${nuevoIndiceVehiculo}</label>
+            <input class="input" type="text" id="ITV${nuevoIndiceVehiculo}" name="ITV${nuevoIndiceVehiculo}"><br><br>
+            <label for="SOAT${nuevoIndiceVehiculo}">SOAT${nuevoIndiceVehiculo}</label>
+            <input class="input" type="text" id="SOAT${nuevoIndiceVehiculo}" name="SOAT${nuevoIndiceVehiculo}"><br><br>
+            <label for="USO${nuevoIndiceVehiculo}">USO${nuevoIndiceVehiculo}</label>
+            <input class="input" type="text" id="USO${nuevoIndiceVehiculo}" name="USO${nuevoIndiceVehiculo}"><br><br>
+            <label for="GPS${nuevoIndiceVehiculo}">GPS${nuevoIndiceVehiculo}</label>
+            <input class="input" type="text" id="GPS${nuevoIndiceVehiculo}" name="GPS${nuevoIndiceVehiculo}"><br><br>
+            <label for="SENTIDO${nuevoIndiceVehiculo}">SENTIDO${nuevoIndiceVehiculo}</label>
+            <input class="input" type="text" id="SENTIDO${nuevoIndiceVehiculo}" name="SENTIDO${nuevoIndiceVehiculo}">
             <div id="carretaContainer${nuevoIndiceVehiculo}"></div>
         `;
     } else if (type === 'pasajeros') {
@@ -80,28 +61,16 @@ function addVehicle(type) {
             <h3>Vehículo de Pasajeros ${nuevoIndiceVehiculo}</h3>
             <label for="tipoVehiculoPasajeros${nuevoIndiceVehiculo}">Tipo de Vehículo:</label>
             <select class="styled-select" id="tipoVehiculoPasajeros${nuevoIndiceVehiculo}" name="tipoVehiculoPasajeros${nuevoIndiceVehiculo}" required>
-                <option value="AMBULANCIA">AMBULANCIA</option>
-                <option value="AUTOMOVIL">AUTOMÓVIL</option>
-                <option value="CAMIONETA 4X2">CAMIONETA 4X2</option>
-                <option value="CAMIONETA 4X4">CAMIONETA 4X4</option>
-                <option value="CAMIONETA RURAL">CAMIONETA RURAL</option>
-                <option value="CAMIONETA STATION WAGON">CAMIONETA STATION WAGON</option>
-                <option value="MINIBUS">MINIBÚS</option>
-                <option value="OMNIBUS">ÓMNIBUS</option>
-                <option value="OMNIBUS ARTICULADO">ÓMNIBUS ARTICULADO</option>
-                <option value="OMNIBUS INTERURBANO">ÓMNIBUS INTERURBANO</option>
-                <option value="OMNIBUS PANORAMICO">ÓMNIBUS PANORÁMICO</option>
-                <option value="OMNIBUS URBANO">ÓMNIBUS URBANO</option>
+                <option value="Microbus">Microbús</option>
+                <option value="Omnibus">Ómnibus</option>
             </select>
             <label for="categoria${nuevoIndiceVehiculo}">Categoría:</label>
             <select class="styled-select" id="categoria${nuevoIndiceVehiculo}" name="categoria${nuevoIndiceVehiculo}" required>
-                <option value="M1">M1</option>
-                <option value="M2">M2</option>
-                <option value="M3">M3</option>
+                <option value="N2">N2</option>
+                <option value="N3">N3</option>
             </select>
             <label for="permisomtc${nuevoIndiceVehiculo}">Permiso MTC:</label>
             <select class="styled-select" id="permisomtc${nuevoIndiceVehiculo}" name="permisomtc${nuevoIndiceVehiculo}" required>
-                <option value="PNR">PNR</option>
                 <option value="PNT">PNT</option>
                 <option value="PNW">PNW</option>
             </select><br><br>
@@ -109,8 +78,6 @@ function addVehicle(type) {
             <input class="input" type="text" id="placa${nuevoIndiceVehiculo}" name="placa${nuevoIndiceVehiculo}" required><br><br>
             <label for="ett${nuevoIndiceVehiculo}">ETT${nuevoIndiceVehiculo}:</label>
             <input class="input" type="text" id="ett${nuevoIndiceVehiculo}" name="ett${nuevoIndiceVehiculo}" required><br><br>
-            <label for="hr${nuevoIndiceVehiculo}">HOJA DE RUTA${nuevoIndiceVehiculo}:</label>
-            <input class="input" type="text" id="hr${nuevoIndiceVehiculo}" name="HOJA DE RUTA${nuevoIndiceVehiculo}" required><br><br>
             <label for="habilitacion${nuevoIndiceVehiculo}">HABILITACION${nuevoIndiceVehiculo}:</label>
             <input class="input" type="text" id="habilitacion${nuevoIndiceVehiculo}" name="habilitacion${nuevoIndiceVehiculo}" required><br><br>
             <label for="itv${nuevoIndiceVehiculo}">ITV${nuevoIndiceVehiculo}:</label>
@@ -129,58 +96,13 @@ function addVehicle(type) {
             <h3>Vehículo Particular ${nuevoIndiceVehiculo}</h3>
             <label for="tipoVehiculoParticular${nuevoIndiceVehiculo}">Tipo de Vehículo:</label>
             <select class="styled-select" id="tipoVehiculoParticular${nuevoIndiceVehiculo}" name="tipoVehiculoParticular${nuevoIndiceVehiculo}" required>
-                <option value="AMBULANCIA">AMBULANCIA</option>
-                <option value="AUTOMOVIL">AUTOMÓVIL</option>
-                <option value="CAMION">CAMIÓN</option>
-                <option value="CAMION AUXILIO MECANICO">CAMIÓN AUXILIO MECÁNICO</option>
-                <option value="CAMION BARANDA">CAMIÓN BARANDA</option>
-                <option value="CAMION CISTERNA">CAMIÓN CISTERNA</option>
-                <option value="CAMION CISTERNA COMBUSTIBLE">CAMIÓN CISTERNA COMBUSTIBLE</option>
-                <option value="CAMION DE BOMBEROS">CAMIÓN DE BOMBEROS</option>
-                <option value="CAMION GRUA">CAMIÓN GRÚA</option>
-                <option value="CAMION MEZCLADOR">CAMIÓN MEZCLADOR</option>
-                <option value="CAMION PLATAFORMA">CAMIÓN PLATAFORMA</option>
-                <option value="CAMION PORTATROPA">CAMIÓN PORTATROPA</option>
-                <option value="CAMION TANQUE CORROSIVO">CAMIÓN TANQUE CORROSIVO</option>
-                <option value="CAMION TANQUE DE GLP">CAMIÓN TANQUE DE GLP</option>
-                <option value="CAMION TANQUE DE GNV">CAMIÓN TANQUE DE GNV</option>
-                <option value="CAMION VOLQUETE">CAMIÓN VOLQUETE</option>
-                <option value="CAMION CAÑERO">CAMIÓN CAÑERO</option>
-                <option value="CAMIONETA 4X2">CAMIONETA 4X2</option>
-                <option value="CAMIONETA 4X4">CAMIONETA 4X4</option>
-                <option value="CAMIONETA RURAL">CAMIONETA RURAL</option>
-                <option value="CAMIONETA STATION WAGON">CAMIONETA STATION WAGON</option>
-                <option value="COMPACTADOR">COMPACTADOR (CAMIÓN DE BASURA)</option>
-                <option value="FURGON">FURGÓN</option>
-                <option value="FURGON FRIGORIFICO">FURGÓN FRIGORÍFICO</option>
-                <option value="FURGON ISOTERMICO">FURGÓN ISOTÉRMICO</option>
-                <option value="MINIBUS">MINIBÚS</option>
-                <option value="MOTOCICLETA">MOTOCICLETA</option>
-                <option value="OMNIBUS">ÓMNIBUS</option>
-                <option value="OMNIBUS ARTICULADO">ÓMNIBUS ARTICULADO</option>
-                <option value="OMNIBUS INTERURBANO">ÓMNIBUS INTERURBANO</option>
-                <option value="OMNIBUS PANORAMICO">ÓMNIBUS PANORÁMICO</option>
-                <option value="OMNIBUS URBANO">ÓMNIBUS URBANO</option>
-                <option value="REMOLCADOR">REMOLCADOR</option>
-                <option value="TRIMOTO CARGA">TRIMOTO CARGA</option>
-                <option value="TRIMOTO PASAJEROS">TRIMOTO PASAJEROS</option>
+                <option value="Automovil">Automóvil</option>
+                <option value="Motocicleta">Motocicleta</option>
             </select>
             <label for="categoria${nuevoIndiceVehiculo}">Categoría:</label>
             <select class="styled-select" id="categoria${nuevoIndiceVehiculo}" name="categoria${nuevoIndiceVehiculo}" required>
-                <option value="L1">L1</option>
-                <option value="L2">L2</option>
-                <option value="L3">L3</option>
-                <option value="L4">L4</option>
-                <option value="M1">M1</option>
-                <option value="M2">M2</option>
-                <option value="M3">M3</option>
-                <option value="N1">N1</option>
                 <option value="N2">N2</option>
                 <option value="N3">N3</option>
-                <option value="O1">O1</option>
-                <option value="O2">O2</option>
-                <option value="O3">O3</option>
-                <option value="O4">O4</option>
             </select><br><br>
             <label for="vehiculo${nuevoIndiceVehiculo}">Vehículo${nuevoIndiceVehiculo}:</label>
             <input class="input" type="text" id="vehiculo${nuevoIndiceVehiculo}" name="vehiculo${nuevoIndiceVehiculo}" required><br><br>
@@ -207,10 +129,8 @@ function addVehicle(type) {
             
             <label for="tipoPrincipalVehInt${nuevoIndiceVehiculo}">Tipo Principal:</label>
             <select class="styled-select" id="tipoPrincipalVehInt${nuevoIndiceVehiculo}" name="tipoPrincipalVehInt${nuevoIndiceVehiculo}" required>
-                <option value="CAMION">CAMIÓN</option>
-                <option value="REMOLCADOR">REMOLCADOR</option>
-                <option value="OMNIBUS">OMNIBUS</option>
-                <option value="MINIBUS">MINIBUS</option>
+                <option value="MERCANCIAS">MERCANCIAS</option>
+                <option value="PASAJEROS">PASAJEROS</option>
                 <option value="TREN">TREN</option>
             </select>
 
@@ -226,12 +146,9 @@ function addVehicle(type) {
 
             <label for="nacionalidadVehInt${nuevoIndiceVehiculo}">Nacionalidad:</label>
             <select class="styled-select" id="nacionalidadVehInt${nuevoIndiceVehiculo}" name="nacionalidadVehInt${nuevoIndiceVehiculo}" required>
-                <option value="ARGENTINO">ARGENTINO</option>
                 <option value="BOLIVIANO">BOLIVIANO</option>
-                <option value="BRASILEÑO">BRASILEÑO</option> 
-                <option value="CHILENO">CHILENO</option>
-                <option value="COLOMBIANO">COLOMBIANO</option>
-                <option value="ECUATORIANO">ECUATORIANO</option> 
+                <option value="ARGENTINO">ARGENTINO</option>
+                <option value="BRAZILEÑO">BRAZILEÑO</option> 
             </select><br><br>
             
             <input type="hidden" id="descripcionFullVehInt${nuevoIndiceVehiculo}" name="descripcionFullVehInt${nuevoIndiceVehiculo}">
@@ -283,55 +200,40 @@ function addVehicle(type) {
     }
 }
 
-function addCarreta(button, vehiculoId, tipoVehiculoPadre = 'mercancias') { 
+function addCarreta(button, vehiculoId, tipoVehiculoPadre = 'mercancias') { // tipoVehiculoPadre no se usa aquí, se asume mercancías
     const carretaContainer = document.getElementById(`carretaContainer${vehiculoId}`);
     if (!carretaContainer) return; 
     const carretaCount = carretaContainer.querySelectorAll('.carreta-section').length + 1;
     const carretaSection = document.createElement('div');
     carretaSection.classList.add('carreta-section');
-    carretaSection.id = `carreta${vehiculoId}_${carretaCount}`; 
+    carretaSection.id = `carreta${vehiculoId}_${carretaCount}`;
     
-    // Esta función ahora SÓLO maneja carretas de mercancías.
-    // La lógica para carreta internacional está en addCarretaInternacional.
-    // El parámetro tipoVehiculoPadre ya no es necesario aquí si esta función solo es para mercancías.
-    // Pero lo mantendré por si acaso lo usas en algún otro lugar, aunque el botón 'mercancias' ahora pasa 'mercancias'.
-    
-    let carretaHTML = `
-        <h3>Carreta ${vehiculoId}.${carretaCount}</h3>
+    carretaSection.innerHTML = `
+        <h5>Carreta ${vehiculoId}.${carretaCount}</h5>
         <label for="tipoCarreta${vehiculoId}_${carretaCount}">Tipo de Vehículo (Carreta):</label>
         <select class="styled-select" id="tipoCarreta${vehiculoId}_${carretaCount}" name="tipoCarreta${vehiculoId}_${carretaCount}" required>
-            <option value="BARANDA">BARANDA</option>
-            <option value="BOMBONA">BOMBONA</option>
-            <option value="CAMION">CAMIÓN</option>
-            <option value="CAMION GRUA">CAMIÓN GRÚA</option>
-            <option value="CAÑERO">CAÑERO</option>
-            <option value="CIGUEÑA">CIGÜEÑA</option>
-            <option value="CISTERNA">CISTERNA</option>
-            <option value="COMPACTADOR">COMPACTADOR</option>
-            <option value="FURGON">FURGÓN</option>
-            <option value="PICK UP">PICK UP</option>
-            <option value="PLATAFORMA">PLATAFORMA</option>
+            <option value="CAMION">CAMION</option>
+            <option value="FURGON">FURGON</option>
             <option value="REMOLCADOR">REMOLCADOR</option>
+            <option value="PLATAFORMA">PLATAFORMA</option>
+            <option value="BARANDA">BARANDA</option>
+            <option value="CISTERNA">CISTERNA</option>
             <option value="VOLQUETE">VOLQUETE</option>
+            <option value="CAÑERO">CAÑERO</option>
+            <option value="CIGUEÑA">CIGUEÑA</option>
+            <option value="BOMBONA">BOMBONA</option>
+            <option value="CAMION GRUA">CAMION GRUA</option>
+            <option value="COMPACTADOR">COMPACTADOR</option>
+            <option value="PICK UP">PICK UP</option>
         </select>
         <label for="categoriaCarreta${vehiculoId}_${carretaCount}">Categoría (Carreta):</label>
         <select class="styled-select" id="categoriaCarreta${vehiculoId}_${carretaCount}" name="categoriaCarreta${vehiculoId}_${carretaCount}" required>
-            <option value="N1">N1</option>
-            <option value="N2">N2</option>
-            <option value="N3">N3</option>
             <option value="O1">O1</option>
             <option value="O2">O2</option>
             <option value="O3">O3</option>
             <option value="O4">O4</option>
-        </select>
-        
-        <label for="permisoMtcCarreta${vehiculoId}_${carretaCount}">Permiso MTC (Carreta):</label>
-        <select class="styled-select" id="permisoMtcCarreta${vehiculoId}_${carretaCount}" name="permisoMtcCarreta${vehiculoId}_${carretaCount}" required>
-            <option value="CNG">CNG</option>
-            <option value="CNG-MRP">CNG-MRP</option>
-            <option value="MRP">MRP</option>
         </select><br><br>
-        
+
         <input class="input" type="hidden" id="vehiculoNombreGeneradoCarreta${vehiculoId}_${carretaCount}" name="vehiculoNombreGeneradoCarreta${vehiculoId}_${carretaCount}" readonly>
         
         <label for="placaCarreta${vehiculoId}_${carretaCount}">Placa (Carreta) ${vehiculoId}.${carretaCount}:</label>
@@ -346,27 +248,21 @@ function addCarreta(button, vehiculoId, tipoVehiculoPadre = 'mercancias') {
         <label for="itvCarreta${vehiculoId}_${carretaCount}">ITV (Carreta) ${vehiculoId}.${carretaCount}:</label>
         <input class="input" type="text" name="itvCarreta${vehiculoId}_${carretaCount}" id="itvCarreta${vehiculoId}_${carretaCount}" required><br><br>
     `;
-    
-    carretaSection.innerHTML = carretaHTML;
     carretaContainer.appendChild(carretaSection);
 
-    // Listeners para carreta de mercancías
     const tipoVehiculoSelect = document.getElementById(`tipoCarreta${vehiculoId}_${carretaCount}`);
     const categoriaSelect = document.getElementById(`categoriaCarreta${vehiculoId}_${carretaCount}`);
-    const permisoMtcSelectCarreta = document.getElementById(`permisoMtcCarreta${vehiculoId}_${carretaCount}`); 
     const vehiculoNombreGeneradoInput = document.getElementById(`vehiculoNombreGeneradoCarreta${vehiculoId}_${carretaCount}`);
 
     function updateNombreGenerado() {
-        if (tipoVehiculoSelect && categoriaSelect && permisoMtcSelectCarreta && vehiculoNombreGeneradoInput) {
-            vehiculoNombreGeneradoInput.value = `${tipoVehiculoSelect.value} (${categoriaSelect.value}) (${permisoMtcSelectCarreta.value})`; 
+        if (tipoVehiculoSelect && categoriaSelect && vehiculoNombreGeneradoInput) {
+            vehiculoNombreGeneradoInput.value = `${tipoVehiculoSelect.value}, ${categoriaSelect.value}`;
         }
     }
     if (tipoVehiculoSelect) tipoVehiculoSelect.addEventListener('change', updateNombreGenerado);
     if (categoriaSelect) categoriaSelect.addEventListener('change', updateNombreGenerado);
-    if (permisoMtcSelectCarreta) permisoMtcSelectCarreta.addEventListener('change', updateNombreGenerado); 
     updateNombreGenerado();
 }
-
 
 function removeCarreta(button, vehiculoId) {
     var carretaContainer = document.getElementById(`carretaContainer${vehiculoId}`);
@@ -387,7 +283,7 @@ function addCarretaInternacional(button, vehiculoId) {
     carretaIntSection.id = `carretaIntEsp${vehiculoId}_${carretaIntCount}`; 
 
     carretaIntSection.innerHTML = `
-        <h3>Carreta Internacional ${vehiculoId}.${carretaIntCount}</h3>
+        <h5>Carreta Internacional ${vehiculoId}.${carretaIntCount}</h5>
         
         <label for="tipoCarretaIntEsp${vehiculoId}_${carretaIntCount}">Tipo Carreta (Int.):</label>
         <select class="styled-select" id="tipoCarretaIntEsp${vehiculoId}_${carretaIntCount}" name="tipoCarretaIntEsp${vehiculoId}_${carretaIntCount}" required>
@@ -407,12 +303,9 @@ function addCarretaInternacional(button, vehiculoId) {
 
         <label for="nacionalidadCarretaIntEsp${vehiculoId}_${carretaIntCount}">Nacionalidad Carreta (Int.):</label>
         <select class="styled-select" id="nacionalidadCarretaIntEsp${vehiculoId}_${carretaIntCount}" name="nacionalidadCarretaIntEsp${vehiculoId}_${carretaIntCount}" required>
-            <option value="ARGENTINO">ARGENTINO</option>
             <option value="BOLIVIANO">BOLIVIANO</option>
-            <option value="BRASILEÑO">BRASILEÑO</option> 
-            <option value="CHILENO">CHILENO</option>
-            <option value="COLOMBIANO">COLOMBIANO</option>
-            <option value="ECUATORIANO">ECUATORIANO</option> 
+            <option value="BRAZILEÑO">BRAZILEÑO</option>
+            <option value="ARGENTINO">ARGENTINO</option>
         </select><br><br>
 
         <input type="hidden" id="descripcionFullCarretaIntEsp${vehiculoId}_${carretaIntCount}" name="descripcionFullCarretaIntEsp${vehiculoId}_${carretaIntCount}">
@@ -457,7 +350,7 @@ function addConductor(button, vehiculoId) {
     conductorSection.classList.add('conductor-section');
     conductorSection.id = `conductor${vehiculoId}_${conductorCount}`;
     conductorSection.innerHTML = `
-        <h3>Conductor ${vehiculoId}.${conductorCount}</h3>
+        <h5>Conductor ${vehiculoId}.${conductorCount}</h5>
         <label for="conductorNombre${vehiculoId}_${conductorCount}">CONDUCTOR ${vehiculoId}.${conductorCount}:</label>
         <input class="input" type="text" id="conductorNombre${vehiculoId}_${conductorCount}" name="conductorNombre${vehiculoId}_${conductorCount}" required><br><br>
         <label for="licencia${vehiculoId}_${conductorCount}">Licencia de conducir ${vehiculoId}.${conductorCount}:</label>
@@ -537,7 +430,7 @@ function actualizarNumeracion() {
             let onclickAttr = boton.getAttribute('onclick');
             if (onclickAttr) {
                 onclickAttr = onclickAttr.replace(
-                    new RegExp(`(addCarreta\\(this, |removeCarreta\\(this, |addCarretaInternacional\\(this, |removeCarretaInternacional\\(this, |addConductor\\(this, |removeConductor\\(this, )${antiguoNumeroVehiculo}(, ['"](mercancias|internacional)['"])?\\)`),
+                    new RegExp(`(addCarreta\\(this, |removeCarreta\\(this, |addCarretaInternacional\\(this, |removeCarretaInternacional\\(this, |addConductor\\(this, |removeConductor\\(this, )${antiguoNumeroVehiculo}(, ['"]internacional['"])?\\)`),
                     `$1${nuevoNumeroVehiculo}$2)` 
                 );
                 boton.setAttribute('onclick', onclickAttr);
@@ -592,7 +485,7 @@ function renumerarSubSecciones(container, selectorSubSeccion, prefijoIdSubSeccio
         let prefijoOriginalDetectado = prefijoIdSubSeccion;
 
         if (partesIdSubOriginal) {
-            prefijoOriginalDetectado = partesIdSubOriginal[1]; // El prefijo como "carreta" o "carretaIntEsp"
+            prefijoOriginalDetectado = partesIdSubOriginal[1];
             idVehiculoOriginalEnSub = parseInt(partesIdSubOriginal[2]); 
             numSubOriginal = parseInt(partesIdSubOriginal[3]);      
         }
@@ -602,6 +495,7 @@ function renumerarSubSecciones(container, selectorSubSeccion, prefijoIdSubSeccio
         const subHeading = subSeccion.querySelector('h5');
         if (subHeading) {
              let tituloBase = prefijoIdSubSeccion.charAt(0).toUpperCase() + prefijoIdSubSeccion.slice(1).replace('IntEsp', ' Internacional');
+
             subHeading.textContent = subHeading.textContent.replace(
                 new RegExp(`(${tituloBase.replace(/\s\(Internacional\)/, ' (Internacional)')}(\\s\\(Internacional\\))?\\s)${idVehiculoOriginalEnSub}\\.${numSubOriginal}`),
                 `$1${nuevoIdVehiculoPadre}.${nuevoSubNumero}`
@@ -612,7 +506,7 @@ function renumerarSubSecciones(container, selectorSubSeccion, prefijoIdSubSeccio
         const patronNuevoBase = `${nuevoIdVehiculoPadre}_${nuevoSubNumero}`;   
 
         subSeccion.querySelectorAll('label, input, select').forEach(el => {
-            const regexAntiguoSinPrefijo = new RegExp(patronAntiguoBase + '$'); // Coincide con el final del string _X_Y
+            const regexAntiguoSinPrefijo = new RegExp(patronAntiguoBase + '$');
             const reemplazoNuevoSinPrefijo = patronNuevoBase;
 
             if (el.htmlFor) {
@@ -647,21 +541,18 @@ function renumerarSubSecciones(container, selectorSubSeccion, prefijoIdSubSeccio
             if (tipoCarretaIntSelect) tipoCarretaIntSelect.onchange = updateDescripcionCarretaInternacionalRenumerada;
             if (categoriaCarretaIntSelect) categoriaCarretaIntSelect.onchange = updateDescripcionCarretaInternacionalRenumerada;
             if (nacionalidadCarretaIntSelect) nacionalidadCarretaIntSelect.onchange = updateDescripcionCarretaInternacionalRenumerada;
-        } else if (prefijoIdSubSeccion === 'carreta') { // Carretas de mercancías
+        } else if (prefijoIdSubSeccion === 'carreta') { 
             const tipoVehiculoSelect = subSeccion.querySelector(`#tipoCarreta${patronNuevoBase}`);
             const categoriaSelect = subSeccion.querySelector(`#categoriaCarreta${patronNuevoBase}`);
-            const permisoMtcSelectCarreta = subSeccion.querySelector(`#permisoMtcCarreta${patronNuevoBase}`); // NUEVO
             const vehiculoNombreGeneradoInput = subSeccion.querySelector(`#vehiculoNombreGeneradoCarreta${patronNuevoBase}`);
-            
-            if (tipoVehiculoSelect && categoriaSelect && permisoMtcSelectCarreta && vehiculoNombreGeneradoInput) { 
+            if (tipoVehiculoSelect && categoriaSelect && vehiculoNombreGeneradoInput) { 
                 function updateNombreGeneradoRenumerada() {
-                    if (tipoVehiculoSelect && categoriaSelect && permisoMtcSelectCarreta && vehiculoNombreGeneradoInput) { 
-                         vehiculoNombreGeneradoInput.value = `${tipoVehiculoSelect.value} (${categoriaSelect.value}) (${permisoMtcSelectCarreta.value})`;
+                    if (tipoVehiculoSelect && categoriaSelect && vehiculoNombreGeneradoInput) { 
+                         vehiculoNombreGeneradoInput.value = `${tipoVehiculoSelect.value}, ${categoriaSelect.value}`;
                     }
                 }
                 tipoVehiculoSelect.onchange = updateNombreGeneradoRenumerada;
                 categoriaSelect.onchange = updateNombreGeneradoRenumerada;
-                permisoMtcSelectCarreta.onchange = updateNombreGeneradoRenumerada; // NUEVO
             }
         }
     });
@@ -882,58 +773,63 @@ function enviarAlerta() {
             const tipoVehiculoSelectMerc = vehiculo.querySelector(`#tipoVehiculo${numeroVehiculoActual}`);
             const tipoVehiculoSelectPas = vehiculo.querySelector(`#tipoVehiculoPasajeros${numeroVehiculoActual}`);
             const tipoVehiculoSelectPart = vehiculo.querySelector(`#tipoVehiculoParticular${numeroVehiculoActual}`);
-            const tipoVehiculoSelectIntPrincipal = vehiculo.querySelector(`#tipoPrincipalVehInt${numeroVehiculoActual}`); 
+            const tipoVehiculoSelectIntPrincipal = vehiculo.querySelector(`#tipoPrincipalVehInt${numeroVehiculoActual}`); // Para el vehículo int principal
             
-            const categoriaSelect = vehiculo.querySelector(`#categoria${numeroVehiculoActual}`); 
-            const permisoMTCSelect = vehiculo.querySelector(`#permisomtc${numeroVehiculoActual}`); 
+            const categoriaSelect = vehiculo.querySelector(`#categoria${numeroVehiculoActual}`); // Para Merc, Pas, Part
+            const permisoMTCSelect = vehiculo.querySelector(`#permisomtc${numeroVehiculoActual}`); // Para Merc, Pas
 
             if (tipoVehiculoSelectMerc) {
                 tipoVehiculoValor = tipoVehiculoSelectMerc.value;
                 if (categoriaSelect) categoriaValor = categoriaSelect.value;
                 if (permisoMTCSelect) permisoMTCValor = permisoMTCSelect.value;
-                vehiculosOutput += `**VEHÍCULO ${numeroVehiculoActual}:* ${tipoVehiculoValor}${categoriaValor ? `(${categoriaValor})` : ''}${permisoMTCValor ? `(${permisoMTCValor})` : ''}\n`;
+                vehiculosOutput += `**Vehículopublicado ${numeroVehiculoActual}:* ${tipoVehiculoValor}${categoriaValor ? `(${categoriaValor})` : ''}${permisoMTCValor ? `(${permisoMTCValor})` : ''}\n`;
             } else if (tipoVehiculoSelectPas) {
                 tipoVehiculoValor = tipoVehiculoSelectPas.value;
                 if (categoriaSelect) categoriaValor = categoriaSelect.value;
                 if (permisoMTCSelect) permisoMTCValor = permisoMTCSelect.value;
-                vehiculosOutput += `**VEHÍCULO ${numeroVehiculoActual}:* ${tipoVehiculoValor}${categoriaValor ? `(${categoriaValor})` : ''}${permisoMTCValor ? `(${permisoMTCValor})` : ''}\n`;
+                vehiculosOutput += `**Vehículo ${numeroVehiculoActual}:* ${tipoVehiculoValor}${categoriaValor ? `(${categoriaValor})` : ''}${permisoMTCValor ? `(${permisoMTCValor})` : ''}\n`;
             } else if (tipoVehiculoSelectPart) {
                 tipoVehiculoValor = tipoVehiculoSelectPart.value;
                 if (categoriaSelect) categoriaValor = categoriaSelect.value; 
-                vehiculosOutput += `**VEHÍCULO ${numeroVehiculoActual}:* ${tipoVehiculoValor}${categoriaValor ? `(${categoriaValor})` : ''}\n`;
-            } else if (tipoVehiculoSelectIntPrincipal) { 
+                vehiculosOutput += `**Vehículo ${numeroVehiculoActual}:* ${tipoVehiculoValor}${categoriaValor ? `(${categoriaValor})` : ''}\n`;
+            } else if (tipoVehiculoSelectIntPrincipal) { // Si es un vehículo internacional
                 const descripcionVehiculoPadreInput = vehiculo.querySelector(`#descripcionFullVehInt${numeroVehiculoActual}`);
                 if (descripcionVehiculoPadreInput && descripcionVehiculoPadreInput.value) {
-                    vehiculosOutput += `**VEHÍCULO ${numeroVehiculoActual}:* ${descripcionVehiculoPadreInput.value}\n`;
+                    vehiculosOutput += `**Vehículo ${numeroVehiculoActual}:* ${descripcionVehiculoPadreInput.value}\n`;
                 } else { 
+                    // Fallback si el input oculto no tiene valor (no debería pasar si los listeners funcionan)
                     const tipoVal = tipoVehiculoSelectIntPrincipal.value;
                     const catVal = vehiculo.querySelector(`#categoriaVehInt${numeroVehiculoActual}`)?.value || '';
                     const nacVal = vehiculo.querySelector(`#nacionalidadVehInt${numeroVehiculoActual}`)?.value || '';
-                    vehiculosOutput += `**VEHÍCULO ${numeroVehiculoActual}:* ${tipoVal} (${catVal})(${nacVal}) (Descripción auto-generada)\n`;
+                    vehiculosOutput += `**Vehículo ${numeroVehiculoActual}:* ${tipoVal} (${catVal}) (${nacVal}) (Descripción auto-generada)\n`;
                 }
             }
 
+            // Campos de texto comunes (Placa, ETT, Sentido)
+            // Ajustar selectores si los nombres de campo para internacional son diferentes (ej. placaVehInt)
             let placaInput, ettInput, sentidoInput;
-            if (tipoVehiculoSelectIntPrincipal) { 
+            if (tipoVehiculoSelectIntPrincipal) { // Vehículo Internacional
                 placaInput = vehiculo.querySelector(`#placaVehInt${numeroVehiculoActual}`);
                 ettInput = vehiculo.querySelector(`#ettVehInt${numeroVehiculoActual}`);
                 sentidoInput = vehiculo.querySelector(`#sentidoVehInt${numeroVehiculoActual}`);
-            } else { 
+            } else { // Otros tipos de vehículos
                 placaInput = vehiculo.querySelector(`#placa${numeroVehiculoActual}`) || vehiculo.querySelector(`#PLACA${numeroVehiculoActual}`);
                 ettInput = vehiculo.querySelector(`#ett${numeroVehiculoActual}`) || vehiculo.querySelector(`#ETT${numeroVehiculoActual}`);
                 sentidoInput = vehiculo.querySelector(`#sentido${numeroVehiculoActual}`) || vehiculo.querySelector(`#SENTIDO${numeroVehiculoActual}`);
             }
             
-            if (placaInput && placaInput.value.trim()) vehiculosOutput += `**PLACA ${numeroVehiculoActual}:* ${placaInput.value.trim()}\n`;
-            if (ettInput && ettInput.value.trim()) vehiculosOutput += `**ETT ${numeroVehiculoActual}:* ${ettInput.value.trim()}\n`;
+            if (placaInput && placaInput.value.trim()) vehiculosOutput += `**Placa${numeroVehiculoActual}:* ${placaInput.value.trim()}\n`;
+            if (ettInput && ettInput.value.trim()) vehiculosOutput += `**ETT${numeroVehiculoActual}:* ${ettInput.value.trim()}\n`;
             
+            // Otros campos que son solo de texto y no selectores principales
             const otrosInputsVehiculo = vehiculo.querySelectorAll(':scope > input[type="text"]');
             otrosInputsVehiculo.forEach(input => {
                 const id = input.id;
+                // Excluir los ya procesados (placa, ett, sentido) y los de carreta/conductor, y descripciones ocultas
                 if (input.value.trim() &&
-                    !id.startsWith('placa') && !id.startsWith('PLACA') && !id.startsWith('placaVehInt') &&
-                    !id.startsWith('ett') && !id.startsWith('ETT') && !id.startsWith('ettVehInt') &&
-                    !id.startsWith('sentido') && !id.startsWith('SENTIDO') && !id.startsWith('sentidoVehInt') &&
+                    !id.startsWith('placa') && !id.startsWith('PLACA') &&
+                    !id.startsWith('ett') && !id.startsWith('ETT') &&
+                    !id.startsWith('sentido') && !id.startsWith('SENTIDO') &&
                     !id.startsWith('descripcionFullVehInt') &&
                     !id.includes('Carreta') && !id.includes('Conductor')) {
                     
@@ -944,7 +840,7 @@ function enviarAlerta() {
                     }
                 }
             });
-            if (sentidoInput && sentidoInput.value.trim()) vehiculosOutput += `**SENTIDO ${numeroVehiculoActual}:* ${sentidoInput.value.trim()}\n`;
+             if (sentidoInput && sentidoInput.value.trim()) vehiculosOutput += `**SENTIDO${numeroVehiculoActual}:* ${sentidoInput.value.trim()}\n`;
 
 
             // Carretas de Mercancías
@@ -955,11 +851,11 @@ function enviarAlerta() {
                 
                 const vehiculoNombreGeneradoInput = carreta.querySelector(`#vehiculoNombreGeneradoCarreta${idBaseCarreta}`);
                 if (vehiculoNombreGeneradoInput && vehiculoNombreGeneradoInput.value) {
-                    vehiculosOutput += `**VEHÍCULO ${numeroVehiculoActual}.${numCarretaActual}:* ${vehiculoNombreGeneradoInput.value}\n`;
+                    vehiculosOutput += `**Vehículo ${numeroVehiculoActual}.${numCarretaActual}:* ${vehiculoNombreGeneradoInput.value}\n`;
                 }
                 const placaCarretaInput = carreta.querySelector(`#placaCarreta${idBaseCarreta}`);
                 if (placaCarretaInput && placaCarretaInput.value) {
-                    vehiculosOutput += `**PLACA ${numeroVehiculoActual}.${numCarretaActual}:* ${placaCarretaInput.value}\n`;
+                    vehiculosOutput += `**Placa ${numeroVehiculoActual}.${numCarretaActual}:* ${placaCarretaInput.value}\n`;
                 }
                 const ettCarretaInput = carreta.querySelector(`#ettCarreta${idBaseCarreta}`);
                 if (ettCarretaInput && ettCarretaInput.value) {
@@ -983,14 +879,14 @@ function enviarAlerta() {
                 
                 const descripcionCarretaIntInput = carretaInt.querySelector(`#descripcionFullCarretaIntEsp${idBaseCarretaInt}`);
                 if (descripcionCarretaIntInput && descripcionCarretaIntInput.value) {
-                    vehiculosOutput += `**VEHÍCULO ${numeroVehiculoActual}.${numCarretaIntActual}:* ${descripcionCarretaIntInput.value}\n`;
+                    vehiculosOutput += `**Vehículo ${numeroVehiculoActual}.${numCarretaIntActual}:* ${descripcionCarretaIntInput.value}\n`;
                 } else {
-                    vehiculosOutput += `**VEHÍCULO ${numeroVehiculoActual}.${numCarretaIntActual}:* (Descripción de carreta internacional no disponible)\n`;
+                    vehiculosOutput += `**Vehículo ${numeroVehiculoActual}.${numCarretaIntActual}:* (Descripción de carreta internacional no disponible)\n`;
                 }
 
                 const placaCarretaIntInput = carretaInt.querySelector(`#placaCarretaIntEsp${idBaseCarretaInt}`); 
                 if (placaCarretaIntInput && placaCarretaIntInput.value) {
-                    vehiculosOutput += `**PLACA ${numeroVehiculoActual}.${numCarretaIntActual}:* ${placaCarretaIntInput.value}\n`;
+                    vehiculosOutput += `**Placa ${numeroVehiculoActual}.${numCarretaIntActual}:* ${placaCarretaIntInput.value}\n`;
                 }
                 const ettCarretaIntInput = carretaInt.querySelector(`#ettCarretaIntEsp${idBaseCarretaInt}`); 
                 if (ettCarretaIntInput && ettCarretaIntInput.value) {
@@ -1025,44 +921,145 @@ function enviarAlerta() {
         let comisariasOutput = "";
         const comisariaSectionElement = document.querySelector('#comisariaContainer .comisaria-section');
         if (comisariaSectionElement) {
-            comisariasOutput = "*\n**DATOS PARA EL OFICIO*\n";
+            comisariasOutput = "*\n**DATOS PARA EL OFICIO**\n";
             const getComisariaValue = name => comisariaSectionElement.querySelector(`input[name="${name}"]`) ? comisariaSectionElement.querySelector(`input[name="${name}"]`).value.trim() : "";
             const comisariaNombreVal = getComisariaValue("comisariaNombreInput");
-            if (comisariaNombreVal) comisariasOutput += `**Comisaria:* ${comisariaNombreVal}\n`;
+            if (comisariaNombreVal) comisariasOutput += `Comisaria: ${comisariaNombreVal}\n`;
             const encargadoVal = getComisariaValue("comisariaEncargadoInput");
-            if (encargadoVal) comisariasOutput += `**Encargado:* ${encargadoVal}\n`;
+            if (encargadoVal) comisariasOutput += `Encargado: ${encargadoVal}\n`;
             const correoVal = getComisariaValue("comisariaCorreoInput");
-            if (correoVal) comisariasOutput += `**Correo:* ${correoVal}\n`;
+            if (correoVal) comisariasOutput += `Correo: ${correoVal}\n`;
             const direccionVal = getComisariaValue("comisariaDireccionInput");
-            if (direccionVal) comisariasOutput += `**Dirección:* ${direccionVal}\n`;
+            if (direccionVal) comisariasOutput += `Dirección: ${direccionVal}\n`;
             const telefonoVal = getComisariaValue("comisariaTelefonoInput");
-            if (telefonoVal) comisariasOutput += `**Telefono:* ${telefonoVal}\n`;
+            if (telefonoVal) comisariasOutput += `Telefono: ${telefonoVal}\n`;
         }
 
         let fuentesOutput = "";
         const fuenteElements = document.querySelectorAll('#fuenteContainer .fuente-section');
         if (fuenteElements.length > 0) {
-            fuentesOutput = "*\n"; // Inicia con '*' si hay fuentes
+            fuentesOutput = "*\n";
             fuenteElements.forEach((fuenteEl, index) => {
                 const numeroFuenteVisual = index + 1;
                 const idFuenteUnico = fuenteEl.id.replace('fuente', '');
-                fuentesOutput += `**FUENTE DE INFORMACIÓN ${numeroFuenteVisual}*\n`;
+                fuentesOutput += `**FUENTE DE INFORMACIÓN ${numeroFuenteVisual}**\n`;
                 const nombreFuente = fuenteEl.querySelector(`#fuenteNombre${idFuenteUnico}`) ? fuenteEl.querySelector(`#fuenteNombre${idFuenteUnico}`).value.trim() : "";
-                if (nombreFuente) fuentesOutput += `**Fuente ${numeroFuenteVisual}:* ${nombreFuente}\n`;
+                if (nombreFuente) fuentesOutput += `Fuente ${numeroFuenteVisual}: ${nombreFuente}\n`;
                 const telefonoFuente = fuenteEl.querySelector(`#telefonoFuente${idFuenteUnico}`) ? fuenteEl.querySelector(`#telefonoFuente${idFuenteUnico}`).value.trim() : "";
-                if (telefonoFuente) fuentesOutput += `**Telefono ${numeroFuenteVisual}:* ${telefonoFuente}\n`;
+                if (telefonoFuente) fuentesOutput += `Telefono: ${telefonoFuente}\n`;
                 const numLlamadas = fuenteEl.querySelector(`#num_llamadas${idFuenteUnico}`) ? fuenteEl.querySelector(`#num_llamadas${idFuenteUnico}`).value.trim() : "";
-                if (numLlamadas) fuentesOutput += `**Numero de Llamadas ${numeroFuenteVisual}:* ${numLlamadas}\n`;
-                if (index < fuenteElements.length -1 && (nombreFuente || telefonoFuente || numLlamadas)) { // Solo añadir espacio si hubo contenido en esta fuente y no es la última
-                     fuentesOutput += "\n"; 
-                }
+                if (numLlamadas) fuentesOutput += `Num. Llamadas: ${numLlamadas}\n`;
+                if (index < fuenteElements.length -1) fuentesOutput += "\n"; 
             });
         }
 
         const vehiculosContent = vehiculosOutput.trim();
-        const comisariasContent = comisariasOutput.trim(); // Ya tiene '*' inicial si existe
-        const fuentesContent = fuentesOutput.trim();     // Ya tiene '*' inicial si existe
+        const comisariasContent = comisariasOutput.trim();
+        const fuentesContent = fuentesOutput.trim();
         
+        // --- INICIO DE LÓGICA DE CONSTRUCCIÓN DE MENSAJE MEJORADA ---
+        let mensajePartes = [];
+
+        // Parte 1: Cabecera de la alerta
+        mensajePartes.push(`*${tipoAlerta} CGM ${numeroAlerta} REPORTE FINAL ${colorEmoji}*`);
+        mensajePartes.push(`**Versión:** *${versionAlerta}*`);
+        mensajePartes.push(`**Consecuencia:** ${consecuenciaAlerta}`);
+        mensajePartes.push(`**Fallecidos:**\t${numFallecidos}${fallecidosOutput ? `\n**Nombres:**\t${fallecidosOutput}` : ''}`);
+        mensajePartes.push(`**Heridos:**\t${numHeridos}${heridosOutput ? `\n**Nombres:**\t${heridosOutput}` : ''}`);
+        mensajePartes.push(`**Modalidad:** ${modalidad}`);
+        mensajePartes.push(`**Fecha conocimiento:**\t${fechaConocimientoFormatted}`);
+        mensajePartes.push(`**Hora conocimiento:** ${horaConocimiento}`);
+        mensajePartes.push(`**Fuente conocimiento:** ${fuenteConocimiento}`);
+        mensajePartes.push(`**Fecha accidente:** ${fechaAccidenteFormatted}`);
+        mensajePartes.push(`**Fuente accidente:** ${fuenteAccidente}`);
+        mensajePartes.push(`**Hora accidente:** ${horaAccidente}`);
+        mensajePartes.push(`**Coordenadas:** ${coordenadas}`);
+        mensajePartes.push(`**Ubicación:** "KM" ${km} DE LA VÍA NACIONAL CON *CÓDIGO* ${codigoRuta}, *DISTRITO* ${distrito}, *PROVINCIA* ${provincia}, *REGIÓN* ${region}`);
+        mensajePartes.push(`**Link:** ${link}`);
+
+        // Parte 2: Sección de Vehículos
+        if (vehiculosContent) {
+            mensajePartes.push("*"); // Separador antes de vehículos si los hay
+            mensajePartes.push(vehiculosContent);
+        }
+        
+        // Parte 3: Separador después de vehículos (si los hubo) o después de Link (si no hubo vehículos), y luego Detalle
+        // Siempre habrá un * antes de Detalle
+        mensajePartes.push("*"); 
+        mensajePartes.push(`**Detalle:** ${detalle}`);
+
+        // Parte 4: Comisarías (si existe)
+        if (comisariasContent) {
+            mensajePartes.push("*"); // Separador antes de Comisarías
+            mensajePartes.push(comisariasContent.substring(2)); // Quitamos el "*\n" inicial de comisariasOutput
+        }
+
+        // Parte 5: Fuentes (si existe)
+        if (fuentesContent) {
+            // Si no hubo comisarías pero sí fuentes, el "*" ya se puso por la lógica anterior de Detalle
+            // o si hubo comisarías, el "*" ya se puso después de comisarías.
+            // Necesitamos un separador antes de fuentes SOLO si no viene justo después de Detalle
+            // y no hubo comisarías. Es más simple: si hay fuentes, poner un separador ANTES.
+            // La variable fuentesContent ya tiene su propio "*\n" al inicio si se genera.
+            if (!comisariasContent) { // Si no hubo comisarias, pero sí fuentes, necesitamos un '*'
+                 mensajePartes.push("*");
+            } else { // Si hubo comisarias, ya hay un '*' después de ellas, no necesitamos otro para fuentes si vienen justo después.
+                // Sin embargo, la variable `fuentesContent` ya viene con su propio "*\n", así que lo quitamos
+                // si viene después de `comisariasContent` para evitar el doble `*`.
+                // Esta lógica se complica. Es más fácil asegurar que cada BLOQUE tenga su separador.
+            }
+             // La variable 'fuentesContent' ya tiene su "*\n" si se generó.
+             // Lo que necesitamos es que si hay 'comisariasContent' y 'fuentesContent',
+             // el '*\n' de 'fuentesContent' no se duplique con el '*' que ya estaría después de 'comisariasContent'.
+
+            // Lógica más simple:
+            // Si hay comisarias, el bloque de fuentes no necesita su '*' inicial.
+            // Si no hay comisarias, el bloque de fuentes sí necesita su '*' inicial.
+            if (comisariasContent && fuentesContent.startsWith("*\n")) {
+                mensajePartes.push(fuentesContent.substring(2)); // Quita el '*\n' de fuentes si ya hubo comisaría
+            } else if (fuentesContent) {
+                 mensajePartes.push("*"); // Asegura el separador si no hubo comisaría
+                 mensajePartes.push(fuentesContent.substring(2)); // Quita el '*\n' de fuentes (si lo tiene) para no duplicar con el que acabamos de poner
+            }
+
+
+        }
+        
+        // --- Lógica de separadores REVISADA y SIMPLIFICADA ---
+        // Vamos a construir las secciones y luego unirlas con el separador deseado.
+
+        let cuerpoMensaje = [];
+        cuerpoMensaje.push(`**Link:** ${link}`);
+
+        if (vehiculosContent) {
+            cuerpoMensaje.push("*");
+            cuerpoMensaje.push(vehiculosContent);
+        }
+
+        cuerpoMensaje.push("*"); // Siempre después de link/vehículos
+        cuerpoMensaje.push(`**Detalle:** ${detalle}`);
+        cuerpoMensaje.push("*"); // Siempre después de Detalle
+
+        if (comisariasContent) {
+            // comisariasContent ya tiene su "*\n**DATOS..."
+            // Quitamos el "*\n" inicial si el anterior fue el "*" de Detalle.
+            cuerpoMensaje.push(comisariasContent.substring(2)); 
+            cuerpoMensaje.push("*"); // Separador después de comisaría
+        }
+
+        if (fuentesContent) {
+            // fuentesContent ya tiene su "*\n**FUENTE..."
+            // Si no hubo comisaría, el último separador fue el de Detalle.
+            // Si hubo comisaría, el último separador fue el de Comisaría.
+            // En ambos casos, el "*\n" inicial de fuentesContent es redundante.
+            cuerpoMensaje.push(fuentesContent.substring(2));
+            cuerpoMensaje.push("*"); // Separador después de fuentes
+        }
+        
+        // Si el último elemento es "*", y no hay nada después antes de "Atte", lo podemos quitar
+        // O mejor, asegurar que "Atte" siempre esté precedido por UN solo "*"
+        // Vamos a reconstruir el mensaje final de forma más controlada.
+
         let finalMessage = `*${tipoAlerta} CGM ${numeroAlerta} REPORTE FINAL ${colorEmoji}*
 **Versión:** *${versionAlerta}*
 **Consecuencia:** ${consecuenciaAlerta}
@@ -1083,34 +1080,34 @@ function enviarAlerta() {
             finalMessage += "\n*\n" + vehiculosContent;
         }
 
-        finalMessage += "\n*\n" + `**Detalle:** ${detalle}`; 
+        finalMessage += "\n*\n" + `**Detalle:** ${detalle}`; // Siempre un * antes y después de Detalle
 
         if (comisariasContent) {
-            finalMessage += "\n" + comisariasContent; // comisariasContent ya empieza con '*'
+            // comisariasContent ya incluye "*\n**DATOS..." al inicio, así que no necesitamos añadir otro '*' antes.
+            finalMessage += "\n" + comisariasContent; 
         }
 
         if (fuentesContent) {
-            if (!comisariasContent) { // Si no hubo comisaría, fuentes necesita su '*' inicial (que ya tiene)
+            if (comisariasContent) { 
+                // Si hubo comisaría, fuentesContent (que empieza con "*\n") se añade directamente.
                 finalMessage += "\n" + fuentesContent;
-            } else { // Si hubo comisaría, el '*' de fuentesContent es redundante con el final de comisaría, así que lo quitamos.
-                // No, comisariasContent NO termina con '*', termina con un \n después de su último campo.
-                // Así que fuentesContent puede ir tal cual.
-                finalMessage += "\n" + fuentesContent;
+            } else {
+                // Si NO hubo comisaría, pero sí fuentes, fuentesContent se añade directamente.
+                finalMessage += "\n" + fuentesContent; 
             }
         }
         
-        finalMessage += "\n*"; // Separador final antes de Atte
+        // Separador final antes de Atte. Se añade siempre.
+        finalMessage += "\n*";
 
-        finalMessage += `\n*Atte*\n*${nombreOperador}*
-*Centro de Gestión y Monitoreo - ${cgm}*
-*SUBGERENCIA DE SUPERVISIÓN ELECTRÓNICA*`;
+        finalMessage += `\n*Atte*\n${nombreOperador}
+Centro de Gestión y Monitoreo - ${cgm}
+SUBGERENCIA DE SUPERVISIÓN ELECTRÓNICA`;
 
         const resultadoEl = document.getElementById('resultado');
         if (resultadoEl) {
-            resultadoEl.textContent = finalMessage.trim();
-        } else {
-            console.error("Elemento con ID 'resultado' no encontrado.");
-        }
+            resultadoEl.textContent = finalMessage.trim(); // .trim() final para limpiar
+        } // ... (resto del try-catch)
 
     } catch (error) {
         console.error("Error en enviarAlerta:", error);
@@ -1120,7 +1117,7 @@ function enviarAlerta() {
              resultadoEl.textContent = `Error: ${error.message}\nStack: ${error.stack}`;
         }
     }
-}
+} // Fin de enviarAlerta
 
 function copiarContenido() {
     const resultadoEl = document.getElementById('resultado');
@@ -1148,14 +1145,17 @@ function copiarContenido() {
     document.body.removeChild(textArea);
 }
 
+// --- Dentro de la función limpiarFormulario ---
+
 function limpiarFormulario() {
     const form = document.querySelector('form');
     if (form) {
-        form.reset(); 
+        form.reset(); // Esto debería resetear los inputs numéricos a sus valores iniciales (0 si así está en el HTML)
     } else {
+        // Fallback si no hay <form>
         document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], input[type="time"], textarea, select').forEach(el => {
             if (el.tagName === 'SELECT') el.selectedIndex = 0;
-            else if (el.type === 'number' && (el.id === 'numFallecidos' || el.id === 'numHeridos')) el.value = '0'; 
+            else if (el.type === 'number' && (el.id === 'numFallecidos' || el.id === 'numHeridos')) el.value = '0'; // Asegurar que estos vuelvan a 0
             else el.value = '';
         });
     }
@@ -1169,12 +1169,14 @@ function limpiarFormulario() {
     clearContainer('comisariaContainer');
     clearContainer('fuenteContainer');
     
+    // --- MODIFICACIÓN AQUÍ para Fallecidos y Heridos ---
     const fallecidosDiv = document.getElementById('fallecidos');
     if (fallecidosDiv) {
         const itemFallecido = fallecidosDiv.querySelector('.fallecido-item');
         if (itemFallecido) {
-            itemFallecido.remove(); 
+            itemFallecido.remove(); // Solo remover el textarea y su botón de eliminar
         }
+        // Asegurar que el input numérico vuelva a 0 si form.reset() no lo hizo (ej. si no está en el form)
         const numFallecidosInput = fallecidosDiv.querySelector('#numFallecidos');
         if (numFallecidosInput) numFallecidosInput.value = '0';
     }
@@ -1183,11 +1185,13 @@ function limpiarFormulario() {
     if (heridosDiv) {
         const itemHerido = heridosDiv.querySelector('.herido-item');
         if (itemHerido) {
-            itemHerido.remove(); 
+            itemHerido.remove(); // Solo remover el textarea y su botón de eliminar
         }
+        // Asegurar que el input numérico vuelva a 0
         const numHeridosInput = heridosDiv.querySelector('#numHeridos');
         if (numHeridosInput) numHeridosInput.value = '0';
     }
+    // --- FIN DE MODIFICACIÓN ---
 
     const resultadoEl = document.getElementById('resultado');
     if (resultadoEl) resultadoEl.textContent = '';
@@ -1203,6 +1207,8 @@ function limpiarFormulario() {
         const el = document.getElementById(id);
         if (el) el.value = value;
     };
+    // Los inputs numFallecidos y numHeridos se setean arriba o por form.reset()
+    // Así que no es estrictamente necesario aquí, pero no hace daño.
     setDefaultValue('versionAlerta', "1");
     setDefaultValue('numFallecidos', "0"); 
     setDefaultValue('numHeridos', "0");
