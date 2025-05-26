@@ -1,6 +1,6 @@
-// js/form-asistencia.js
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Obtener elementos del formulario
+
     const asistenciaForm = document.getElementById('asistenciaForm');
     const turnoSelect = document.getElementById('turno');
     const modalidadSelect = document.getElementById('modalidad');
@@ -11,11 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnInicioTurno = document.getElementById('btnInicioTurno');
     const btnFinTurno = document.getElementById('btnFinTurno');
 
-    // Verificar que todos los elementos existen
+
     if (asistenciaForm && turnoSelect && modalidadSelect && fullnameInput && cgmSelect && formatoAsistenciaInput && copiarBtn && btnInicioTurno && btnFinTurno) {
         
         function generarStringFormato(tipoEvento) {
-            const turno = turnoSelect.value; // Ahora será "Mañana" o "Amanecida"
+            const turno = turnoSelect.value;
             const modalidad = modalidadSelect.value; 
             const operatorName = fullnameInput.value.trim();
             const cgm = cgmSelect.value;
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let generatedString = "";
 
             if (tipoEvento === "Inicio Turno") {
-                // CAMBIOS AQUÍ: "Diurno" -> "Mañana", "Nocturno" -> "Amanecida"
+
                 if (turno === "Mañana") { 
                     generatedString = `*INICIO DE TURNO ${turno.toUpperCase()} ${modalidad.toUpperCase()}*
 Buenos dias, se informa inicio del Turno Mañana del día ${fechaFormateada} desde las 07:00 horas hasta las 19:00 horas.
@@ -59,7 +59,7 @@ Atte.
 *SUBGERENCIA DE SUPERVISION ELECTRONICA*`;
                 }
             } else if (tipoEvento === "Fin Turno") {
-                // CAMBIOS AQUÍ: "Diurno" -> "Mañana", "Nocturno" -> "Amanecida"
+
                 if (turno === "Mañana") { 
                     generatedString = `*FIN DE TURNO ${turno.toUpperCase()} ${modalidad.toUpperCase()}*
 Buenas noches, se informa fin del Turno Mañana del día ${fechaFormateada} desde las 07:00 horas hasta las 19:00 horas.
@@ -87,8 +87,6 @@ Atte.
             return generatedString;
         }
 
-        // ... (el resto de los listeners de los botones y la función de copiado no necesitan cambiar)
-        // Event listener para el botón INICIO TURNO
         btnInicioTurno.addEventListener('click', function() {
             const generatedString = generarStringFormato("Inicio Turno");
             if (generatedString) {
@@ -96,7 +94,6 @@ Atte.
             }
         });
 
-        // Event listener para el botón FIN TURNO
         btnFinTurno.addEventListener('click', function() {
             const generatedString = generarStringFormato("Fin Turno");
             if (generatedString) {

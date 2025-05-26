@@ -41,8 +41,6 @@ function generarReporte() {
     }
 
     const tipoAlerta = datos.get('tipoAlerta') || "ALERTA DE ACCIDENTE";
-    
-    // Convertir la fecha y hora a formato deseado sin a.m. o p.m.
     let fechaConocimiento = datos.get('fechaConocimiento') || "(POR CONFIRMAR)";
     if (fechaConocimiento !== "(POR CONFIRMAR)") {
         const fechaObj = new Date(fechaConocimiento);
@@ -78,8 +76,6 @@ Atte.
 function limpiarFormulario() {
     const form = document.getElementById('alertForm');
     form.reset();
-    
-    // Resetear también el contenedor de vehículos
     const vehiculosContainer = document.getElementById('vehiculosContainer');
     vehiculosContainer.innerHTML = '<h2>Vehículos Involucrados</h2>';
     vehiculoCount = 0;
@@ -104,8 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
     buttons.forEach(button => {
         button.addEventListener("click", function () {
             const formId = this.getAttribute("data-form");
-            forms.forEach(form => form.style.display = "none"); // Ocultar todos los formularios
-            document.getElementById(formId).style.display = "block"; // Mostrar solo el seleccionado
+            forms.forEach(form => form.style.display = "none");
+            document.getElementById(formId).style.display = "block";
         });
     });
 
@@ -144,7 +140,6 @@ function submitTrafficForm() {
     };
 
     document.getElementById("outputMessage").value = zoneMessages[zone];
-    //ESTA LINEA DEJAR COMO ESTA
         document.getElementById('resultado').textContent = zoneMessages[zone];
 }
 
@@ -207,7 +202,6 @@ return;
 const currentDate = new Date();
 const formattedDate = currentDate.toLocaleDateString("es-PE");
 
-// Calcular la fecha del día siguiente
 const nextDay = new Date();
 nextDay.setDate(currentDate.getDate() + 1);
 const formattedNextDay = nextDay.toLocaleDateString("es-PE");
@@ -245,7 +239,6 @@ return;
 const currentDate = new Date();
 const formattedDate = currentDate.toLocaleDateString("es-PE");
 
-// Calcular la fecha del día siguiente
 const nextDay = new Date();
 nextDay.setDate(currentDate.getDate() + 1);
 const formattedNextDay = nextDay.toLocaleDateString("es-PE");

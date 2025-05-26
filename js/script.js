@@ -1,9 +1,6 @@
-// --- START OF FILE script.js --- //
-
-/* Contadores y Función para agregar vehículos */
 let contadorVehiculos = 0;
-let contadorFuentes = 0; // ID único incremental global para la sección de fuente
-let contadorFuentesActual = 0; // Numeración visual correlativa para fuentes
+let contadorFuentes = 0; 
+let contadorFuentesActual = 0;
 
 function addVehicle(type) {
     const nuevoIndiceVehiculo = contadorVehiculos + 1;
@@ -291,11 +288,6 @@ function addCarreta(button, vehiculoId, tipoVehiculoPadre = 'mercancias') {
     carretaSection.classList.add('carreta-section');
     carretaSection.id = `carreta${vehiculoId}_${carretaCount}`; 
     
-    // Esta función ahora SÓLO maneja carretas de mercancías.
-    // La lógica para carreta internacional está en addCarretaInternacional.
-    // El parámetro tipoVehiculoPadre ya no es necesario aquí si esta función solo es para mercancías.
-    // Pero lo mantendré por si acaso lo usas en algún otro lugar, aunque el botón 'mercancias' ahora pasa 'mercancias'.
-    
     let carretaHTML = `
         <h3>Carreta ${vehiculoId}.${carretaCount}</h3>
         <label for="tipoCarreta${vehiculoId}_${carretaCount}">Tipo de Vehículo (Carreta):</label>
@@ -350,7 +342,6 @@ function addCarreta(button, vehiculoId, tipoVehiculoPadre = 'mercancias') {
     carretaSection.innerHTML = carretaHTML;
     carretaContainer.appendChild(carretaSection);
 
-    // Listeners para carreta de mercancías
     const tipoVehiculoSelect = document.getElementById(`tipoCarreta${vehiculoId}_${carretaCount}`);
     const categoriaSelect = document.getElementById(`categoriaCarreta${vehiculoId}_${carretaCount}`);
     const permisoMtcSelectCarreta = document.getElementById(`permisoMtcCarreta${vehiculoId}_${carretaCount}`); 
@@ -592,7 +583,7 @@ function renumerarSubSecciones(container, selectorSubSeccion, prefijoIdSubSeccio
         let prefijoOriginalDetectado = prefijoIdSubSeccion;
 
         if (partesIdSubOriginal) {
-            prefijoOriginalDetectado = partesIdSubOriginal[1]; // El prefijo como "carreta" o "carretaIntEsp"
+            prefijoOriginalDetectado = partesIdSubOriginal[1];
             idVehiculoOriginalEnSub = parseInt(partesIdSubOriginal[2]); 
             numSubOriginal = parseInt(partesIdSubOriginal[3]);      
         }
@@ -612,7 +603,7 @@ function renumerarSubSecciones(container, selectorSubSeccion, prefijoIdSubSeccio
         const patronNuevoBase = `${nuevoIdVehiculoPadre}_${nuevoSubNumero}`;   
 
         subSeccion.querySelectorAll('label, input, select').forEach(el => {
-            const regexAntiguoSinPrefijo = new RegExp(patronAntiguoBase + '$'); // Coincide con el final del string _X_Y
+            const regexAntiguoSinPrefijo = new RegExp(patronAntiguoBase + '$');
             const reemplazoNuevoSinPrefijo = patronNuevoBase;
 
             if (el.htmlFor) {
@@ -647,10 +638,10 @@ function renumerarSubSecciones(container, selectorSubSeccion, prefijoIdSubSeccio
             if (tipoCarretaIntSelect) tipoCarretaIntSelect.onchange = updateDescripcionCarretaInternacionalRenumerada;
             if (categoriaCarretaIntSelect) categoriaCarretaIntSelect.onchange = updateDescripcionCarretaInternacionalRenumerada;
             if (nacionalidadCarretaIntSelect) nacionalidadCarretaIntSelect.onchange = updateDescripcionCarretaInternacionalRenumerada;
-        } else if (prefijoIdSubSeccion === 'carreta') { // Carretas de mercancías
+        } else if (prefijoIdSubSeccion === 'carreta') {
             const tipoVehiculoSelect = subSeccion.querySelector(`#tipoCarreta${patronNuevoBase}`);
             const categoriaSelect = subSeccion.querySelector(`#categoriaCarreta${patronNuevoBase}`);
-            const permisoMtcSelectCarreta = subSeccion.querySelector(`#permisoMtcCarreta${patronNuevoBase}`); // NUEVO
+            const permisoMtcSelectCarreta = subSeccion.querySelector(`#permisoMtcCarreta${patronNuevoBase}`);
             const vehiculoNombreGeneradoInput = subSeccion.querySelector(`#vehiculoNombreGeneradoCarreta${patronNuevoBase}`);
             
             if (tipoVehiculoSelect && categoriaSelect && permisoMtcSelectCarreta && vehiculoNombreGeneradoInput) { 
@@ -661,7 +652,7 @@ function renumerarSubSecciones(container, selectorSubSeccion, prefijoIdSubSeccio
                 }
                 tipoVehiculoSelect.onchange = updateNombreGeneradoRenumerada;
                 categoriaSelect.onchange = updateNombreGeneradoRenumerada;
-                permisoMtcSelectCarreta.onchange = updateNombreGeneradoRenumerada; // NUEVO
+                permisoMtcSelectCarreta.onchange = updateNombreGeneradoRenumerada;
             }
         }
     });
@@ -946,8 +937,6 @@ function enviarAlerta() {
             });
             if (sentidoInput && sentidoInput.value.trim()) vehiculosOutput += `**SENTIDO ${numeroVehiculoActual}:* ${sentidoInput.value.trim()}\n`;
 
-
-            // Carretas de Mercancías
             const carretasMercanciasElements = vehiculo.querySelectorAll(`#carretaContainer${numeroVehiculoActual} .carreta-section`);
             carretasMercanciasElements.forEach((carreta, idxCarreta) => {
                 const numCarretaActual = idxCarreta + 1;
@@ -975,7 +964,6 @@ function enviarAlerta() {
                 }
             });
 
-            // Carretas Internacionales
             const carretasInternacionalesElements = vehiculo.querySelectorAll(`#carretaInternacionalContainer${numeroVehiculoActual} .carreta-internacional-section`);
             carretasInternacionalesElements.forEach((carretaInt, idxCarretaInt) => {
                 const numCarretaIntActual = idxCarretaInt + 1;
@@ -1042,7 +1030,7 @@ function enviarAlerta() {
         let fuentesOutput = "";
         const fuenteElements = document.querySelectorAll('#fuenteContainer .fuente-section');
         if (fuenteElements.length > 0) {
-            fuentesOutput = "*\n"; // Inicia con '*' si hay fuentes
+            fuentesOutput = "*\n";
             fuenteElements.forEach((fuenteEl, index) => {
                 const numeroFuenteVisual = index + 1;
                 const idFuenteUnico = fuenteEl.id.replace('fuente', '');
@@ -1053,15 +1041,15 @@ function enviarAlerta() {
                 if (telefonoFuente) fuentesOutput += `**Telefono ${numeroFuenteVisual}:* ${telefonoFuente}\n`;
                 const numLlamadas = fuenteEl.querySelector(`#num_llamadas${idFuenteUnico}`) ? fuenteEl.querySelector(`#num_llamadas${idFuenteUnico}`).value.trim() : "";
                 if (numLlamadas) fuentesOutput += `**Numero de Llamadas ${numeroFuenteVisual}:* ${numLlamadas}\n`;
-                if (index < fuenteElements.length -1 && (nombreFuente || telefonoFuente || numLlamadas)) { // Solo añadir espacio si hubo contenido en esta fuente y no es la última
+                if (index < fuenteElements.length -1 && (nombreFuente || telefonoFuente || numLlamadas)) {
                      fuentesOutput += "\n"; 
                 }
             });
         }
 
         const vehiculosContent = vehiculosOutput.trim();
-        const comisariasContent = comisariasOutput.trim(); // Ya tiene '*' inicial si existe
-        const fuentesContent = fuentesOutput.trim();     // Ya tiene '*' inicial si existe
+        const comisariasContent = comisariasOutput.trim();
+        const fuentesContent = fuentesOutput.trim();
         
         let finalMessage = `*${tipoAlerta} CGM ${numeroAlerta} REPORTE FINAL ${colorEmoji}*
 **Versión:** *${versionAlerta}*
@@ -1086,20 +1074,18 @@ function enviarAlerta() {
         finalMessage += "\n*\n" + `**Detalle:** ${detalle}`; 
 
         if (comisariasContent) {
-            finalMessage += "\n" + comisariasContent; // comisariasContent ya empieza con '*'
+            finalMessage += "\n" + comisariasContent;
         }
 
         if (fuentesContent) {
-            if (!comisariasContent) { // Si no hubo comisaría, fuentes necesita su '*' inicial (que ya tiene)
+            if (!comisariasContent) {
                 finalMessage += "\n" + fuentesContent;
-            } else { // Si hubo comisaría, el '*' de fuentesContent es redundante con el final de comisaría, así que lo quitamos.
-                // No, comisariasContent NO termina con '*', termina con un \n después de su último campo.
-                // Así que fuentesContent puede ir tal cual.
+            } else { 
                 finalMessage += "\n" + fuentesContent;
             }
         }
         
-        finalMessage += "\n*"; // Separador final antes de Atte
+        finalMessage += "\n*";
 
         finalMessage += `\n*Atte*\n*${nombreOperador}*
 *Centro de Gestión y Monitoreo - ${cgm}*
@@ -1214,4 +1200,3 @@ function limpiarFormulario() {
     setDefaultValue('consecuenciaAlerta', "con consecuencias");
     setDefaultValue('cgm', " ");
 }
-// --- END OF FILE script.js --- //
