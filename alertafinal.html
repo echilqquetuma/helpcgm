@@ -119,7 +119,8 @@
 						<select class="styled-select" id="tipoAlerta" name="tipoAlerta" required>
 							<option value="ALERTA DE ACCIDENTE">ALERTA DE ACCIDENTE</option>
 							<option value="ALERTA DE ACCIDENTE INFORMATIVA">ALERTA DE ACCIDENTE INFORMATIVA</option>
-						</select><br><br>
+							<option value="ALERTA DE ASALTO">ALERTA DE ASALTO</option>
+						</select><br>
 		
 						<label for="numeroAlerta">Codigo de Alerta:</label>
 						<input class="input" type="text" id="numeroAlerta" name="numeroAlerta" required>
@@ -128,55 +129,60 @@
 							<option value="rojo">🔴</option>
 							<option value="naranja">🟠</option>
 							<option value="amarillo">🟡</option>
-						</select><br><br>
+						</select><br>
 		
 						<label for="versionAlerta">Versión de Alerta:</label>
-						<input class="input" type="text" id="versionAlerta" name="versionAlerta" value="1" required><br><br>
+						<input class="input" type="text" id="versionAlerta" name="versionAlerta" value="1" required><br>
 						<label for="consecuenciaAlerta">Consecuencias:</label>
 						<select class="styled-select" id="consecuenciaAlerta" name="consecuenciaAlerta" required>
 							<option value="con consecuencias">Con Consecuencias</option>
 							<option value="sin consecuencias">Sin Consecuencias</option>
-						</select><br><br>
+						</select><br>
 		
 						<div id="fallecidos">
 							<label>Fallecidos:</label>
 							<input class="input" type="number" id="numFallecidos" name="numFallecidos" min="0" value="0">
 							<button type="button" onclick="agregarFallecido()"><img src="img/fallecido.svg" width="15px" height="15px">Agregar Fallecido</button>
-						</div><br>
+						</div>
 						<div id="heridos">
 							<label>Heridos:</label>
 							<input class="input" type="number" id="numHeridos" name="numHeridos" min="0" value="0">
 							<button type="button" onclick="agregarHerido()"><img src="img/herido.svg" width="15px" height="15px">Agregar Herido</button>
-						</div><br>                
-						
+						</div>                						
 						<label for="modalidad">Modalidad:</label>
-						<input class="input" type="text" id="modalidad" name="modalidad" required><br><br>
+						<input class="input" type="text" id="modalidad" name="modalidad" required><br>
 						<label for="fechaConocimiento">Fecha Conocimiento:</label>
 						<input class="input" type="date" id="fechaConocimiento" name="fechaConocimiento" required>
 						<label for="horaConocimiento">Hora Conocimiento:</label>
-						<input class="input" type="time" id="horaConocimiento" name="horaConocimiento" required><br><br>
+						<input class="input" type="time" id="horaConocimiento" name="horaConocimiento" required><br>
 						<label for="fuenteConocimiento">Fuente Conocimiento:</label>
-						<input class="input2" class="input" type="text" id="fuenteConocimiento" name="fuenteConocimiento" value="FACEBOOK- " required><br><br>
+						<input class="input2" class="input" type="text" id="fuenteConocimiento" name="fuenteConocimiento" value="FACEBOOK- " required><br>
 						<label for="fechaAccidente">Fecha Accidente:</label>
 						<input class="input" type="date" id="fechaAccidente" name="fechaAccidente" required>
 						<label for="horaAccidente">Hora Accidente:</label>
-						<input class="input" type="time" id="horaAccidente" name="horaAccidente" required><br><br>
+						<input class="input" type="time" id="horaAccidente" name="horaAccidente" required><br>
 						<label for="fuenteAccidente">Fuente Accidente:</label>
-						<input class="input2" type="text" id="fuenteAccidente" name="fuenteAccidente" value="TOMA CONOCIMIENTO PNP " required><br><br>
+						<input class="input2" type="text" id="fuenteAccidente" name="fuenteAccidente" value="TOMA CONOCIMIENTO PNP " required><br>
 						<label for="coordenadas">Coordenadas:</label>
-						<input class="input" type="text" id="coordenadas" name="coordenadas" required><br><br>
-						<label for="km">KM:</label>
-						<input class="input" type="text" id="km" name="km" required>
-						<label for="codigoRuta">Código de Ruta:</label>
-						<input class="input" type="text" id="codigoRuta" name="codigoRuta" required><br><br>
+						<input class="input" type="text" id="coordenadas" name="coordenadas" required><br>
+						                        
+						<div class="button-container-ubicacion" style="margin-top: 10px; margin-bottom: 10px;">
+                            <button type="button" class="button-small" id="btnUbicacionCiudad" onclick="mostrarCamposUbicacion('ciudad')">En Ciudad</button>
+                            <button type="button" class="button-small" id="btnUbicacionCarretera" onclick="mostrarCamposUbicacion('carretera')">En Carretera</button>
+                        </div>
+
+                        <!-- CONTENEDOR PARA CAMPOS DE UBICACIÓN DINÁMICOS -->
+                        <div id="camposUbicacionDinamicos">
+                        </div>
+                        
 						<label for="distrito">Distrito:</label>
 						<input class="input" type="text" id="distrito" name="distrito" required>
 						<label for="provincia">Provincia:</label>
-						<input class="input" type="text" id="provincia" name="provincia" required><br><br>
+						<input class="input" type="text" id="provincia" name="provincia" required><br>
 						<label for="region">Región:</label>
-						<input class="input" type="text" id="region" name="region" required><br><br>
+						<input class="input" type="text" id="region" name="region" required><br>
 						<label for="link">Link:</label>
-						<input class="input3" type="text" id="link" name="link" required><br><br>
+						<input class="input3" type="text" id="link" name="link" required><br>
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -195,7 +201,7 @@
 					<div class="price-box popular">
 						<h2>Detalles e Investigacion</h2>
 						<label for="detalle">Detalle:</label>
-						<textarea id="detalle" name="detalle" rows="4" required>A CONSECUENCIA DEL ACCIDENTE SE REPORTARON DAÑOS MATERIALES, LOS MISMOS QUE SE ENCUENTRAN SUJETO A PERITAJE TÉCNICO POLICIAL. LAS INVESTIGACIONES DE LAS CAUSAS DEL ACCIDENTE ESTÁN A CARGO DE LA CPNP.</textarea><br><br>                
+						<textarea id="detalle" name="detalle" rows="4" required>A CONSECUENCIA DEL ACCIDENTE SE REPORTARON DAÑOS MATERIALES, LOS MISMOS QUE SE ENCUENTRAN SUJETO A PERITAJE TÉCNICO POLICIAL. LAS INVESTIGACIONES DE LAS CAUSAS DEL ACCIDENTE ESTÁN A CARGO DE LA CPNP.</textarea><br>                
 						<div class="button-container centered-buttons">
 							<button class="button2" type="button" id="comisaria" onclick="addComisaria()"><img src="img/comisaria.svg" width:"30px" height="30px">COMISARIA</button>
 							<button class="button2" type="button" id="fuente" onclick="addFuente()"><img src="img/fuente.svg" width:"30px" height="30px">FUENTE</button>
@@ -203,13 +209,13 @@
 						<div id="comisariaContainer"></div><br>
 						<div id="fuenteContainer"></div><br>
 						<label for="nombreOperador">Nombre del Operador:</label>
-						<input class="input" type="text" id="nombreOperador" name="nombreOperador" required><br><br>
+						<input class="input" type="text" id="nombreOperador" name="nombreOperador" required><br>
 						<label for="cgm">CGM:</label>
-						<select class="styled-select" id="cgm" name="cgm" required>
-							<option value=" "> </option>
-							<option value="Arequipa">Arequipa</option>
-							<option value="Piura">Piura</option>
-							<option value="Junin">Junin</option>
+						<select class="styled-select" id="cgm" name="cgm">
+							<option value="">Lima</option>
+							<option value=" - Arequipa">Arequipa</option>
+							<option value=" - Piura">Piura</option>
+							<option value=" - Junin">Junin</option>
 						</select><br><br>
 						<div class="button-container centered-buttons">
 							<button class="button2" type="submit"><img src="img/generar.png" width:"50px" height="50px">GENERAR ALERTA</button>
