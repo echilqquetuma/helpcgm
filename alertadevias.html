@@ -48,6 +48,7 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/custom-styles.css">
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -116,41 +117,44 @@
 						<h1>ALERTA DE ACTUALIZACION DE ESTADO DE VIA</h1>
 						<form id="simpleForm">
 			
-							<label for="color">ALERTA DE ACTUALIZACION DE ESTADO DE VIA:</label>
+							<label for="color">ALERTA DE ACTUALIZACION DE ESTADO DE VIA</label>
 							<select class="input" id="color" name="color" required>
 								<option value="🟢">🟢</option>
 								<option value="🟡">🟡</option>
 								<option value="🔴">🔴</option>
-							</select><br><br>
+							</select><br>
+
+							<label for="codigoevia">Codigo EVIA:</label>
+							<input class="input" type="text" id="codigoevia" name="codigoevia" required><br>
 			
 							<label for="fechaHora">Fecha y Hora:</label>
-							<input class="input" type="datetime-local" id="fechaHora" name="fechaHora" required><br><br>
+							<input class="input" type="datetime-local" id="fechaHora" name="fechaHora" required><br>
 							
 							<label for="estadoAnterior">Estado Anterior:</label>
 							<select class="input" id="estadoAnterior" name="estadoAnterior" required>
 								<option value="TRANSITO NORMAL">TRANSITO NORMAL</option>
 								<option value="TRANSITO RESTRINGIDO">TRANSITO RESTRINGIDO</option>
 								<option value="TRANSITO INTERRUMPIDO">TRANSITO INTERRUMPIDO</option>
-							</select><br><br>
+							</select><br>
 							
 							<label for="estadoActual">Estado Actual:</label>
 							<select class="input" id="estadoActual" name="estadoActual" required>
 								<option value="TRANSITO NORMAL">TRANSITO NORMAL</option>
 								<option value="TRANSITO RESTRINGIDO">TRANSITO RESTRINGIDO</option>
 								<option value="TRANSITO INTERRUMPIDO">TRANSITO INTERRUMPIDO</option>
-							</select><br><br>                
+							</select><br>               
 			
 							<label for="ubigeo">Ubigeo:</label>
-							<input class="input" type="text" id="ubigeo" name="ubigeo" required><br><br>
+							<input class="input" type="text" id="ubigeo" name="ubigeo" required><br>
 							
 							<label for="carretera">Carretera:</label>
-							<input class="input" type="text" id="carretera" name="carretera" required><br><br>
+							<input class="input" type="text" id="carretera" name="carretera" required><br>
 			
 							<label for="kilometraje">Kilometraje (Afectación):</label>
-							<input class="input" type="text" id="kilometraje" name="kilometraje" required><br><br>
+							<input class="input" type="text" id="kilometraje" name="kilometraje" required><br>
 							
 							<label for="localizacion">Localización:</label>
-							<input class="input" type="text" id="localizacion" name="localizacion" required><br><br>
+							<input class="input" type="text" id="localizacion" name="localizacion" required><br>
 							
 							<label for="motivo">Motivo:</label>
 							<select class="input" id="motivo" name="motivo" required>
@@ -158,7 +162,7 @@
 								<option value="HUMANO">HUMANO</option>
 								<option value="CLIMATOLOGICO">CLIMATOLOGICO</option>
 								<option value="INFRAESTRUCTURA">INFRAESTRUCTURA</option>
-							</select><br><br>
+							</select><br>
 			
 							<label for="evento">Evento:</label>
 							<select class="input" id="evento" name="evento" required>
@@ -166,20 +170,20 @@
 								<option value="PROTESTAS">PROTESTAS</option>
 								<option value="DERRUMBES">DERRUMBES</option>
 								<option value="HABILITACION DE LA VIA">HABILITACION DE LA VIA</option>
-							</select><br><br>
+							</select><br>
 			
 							<label for="fuente">Fuente:</label>
 							<select class="input" id="fuente" name="fuente" required>
 								<option value="PNP">PNP</option>
 								<option value="CONCESIONARIA">CONCESIONARIA</option>
 								<option value="OTROS">OTROS</option>
-							</select><br><br>
+							</select><br>
 			
 							<label for="detalle">Detalle:</label>
-							<textarea id="detalle" name="detalle" rows="2" required>SE CRUZO COMUNICACION CON LA CPNP, QUIENES INDICAN QUE LA VIA SE ENCUENTRA INTERRUMPIDA</textarea><br><br>                
+							<textarea id="detalle" name="detalle" rows="2" required>SE CRUZO COMUNICACION CON LA CPNP, QUIENES INDICAN QUE LA VIA SE ENCUENTRA INTERRUMPIDA</textarea><br>                
 							
 							<label for="operador">Operador:</label>
-							<input class="input" type="text" id="operador" name="operador" required><br><br>
+							<input class="input" type="text" id="operador" name="operador" required><br>
 			
 							<label for="cgm">CGM:</label>
 							<select class="input" id="cgm" name="cgm" required>
@@ -189,10 +193,9 @@
 								<option value=" - Piura">Piura</option>
 							</select><br><br>
 			
-							<!-- Botones para generar reporte, limpiar formulario y copiar contenido -->
 							<div class="button-container">
-								<button class="button2" type="button" onclick="generarSimpleReporte()"><img src="img/generar.png" width:"50px" height="50px">Generar Reporte</button>
-								<button class="button2" type="button" onclick="limpiarSimpleFormulario()"><img src="img/limpiar.svg" width:"50px" height="50px">Limpiar Formulario</button>
+								<button class="button2" type="button" onclick="generarSimpleReporte()"><img src="img/generar.png" width="50px" height="50px">Generar Reporte</button>
+								<button class="button2" type="button" onclick="limpiarSimpleFormulario()"><img src="img/limpiar.svg" width="50px" height="50px">Limpiar Formulario</button>
 							</div>
 						</form>
 					</div>

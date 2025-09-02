@@ -48,6 +48,7 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/custom-styles.css">
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -107,6 +108,9 @@
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>ALERTA INICIAL</h2>
 					<p>GENERA TU ALERTA INICIAL</p>
+					<div id="status-indicator-inicial" style="margin-top: 15px; margin-bottom: 15px; padding: 10px; border-radius: 5px; text-align: center; font-weight: bold;">
+                    Cargando opciones...
+                    </div>
 				</div>
 			</div>
 
@@ -137,46 +141,44 @@
 							<label for="heridos">Heridos:</label>
 							<input class="input" type="number" id="heridos" name="heridos" value="0" required><br>
 							
-<label for="modalidad">Modalidad:</label>
-<input class="input" type="text" id="modalidad" name="modalidad" required>
-<datalist id="modalidadDataList"></datalist><br>
+							<label for="modalidad">Modalidad:</label>
+							<input class="input" type="text" id="modalidad" name="modalidad" required>
+							<datalist id="modalidadDataList"></datalist><br>
 							
 							<label for="fechaConocimiento">Hora/Fecha de Conocimiento:</label>
 							<input class="input" type="datetime-local" id="fechaConocimiento" name="fechaConocimiento" required><br>
 							
 							<label for="fuenteConocimiento">Fuente de Conocimiento:</label>
-							<input class="input2" type="text" id="fuenteConocimiento" name="fuenteConocimiento" value="FACEBOOK -" required><br>
+							<input class="input" type="text" id="fuenteConocimiento" name="fuenteConocimiento" value="FACEBOOK -" required><br>
+
+							<label for="link">Link:</label>
+							<input class="input" type="text" id="linkfuenteConocimiento" name="linkfuenteConocimiento" required><br>
 							
 							<label for="lugar">Lugar:</label>
-							<input class="input2" type="text" id="lugar" name="lugar" placeholder="Por confirmar" required><br>
+							<input class="input" type="text" id="lugar" name="lugar" placeholder="Por confirmar" required><br>
 			
-							<!-- Contenedor de vehículos -->
 							<div id="vehiculosContainer">
 								<h2>Vehículos Involucrados</h2>
 							</div>
 			
-							<!-- Botones para agregar y eliminar vehículos -->
 							<button type="button" onclick="agregarVehiculo()">Agregar Vehículo</button>
 							<button type="button" onclick="eliminarUltimoVehiculo()">Eliminar Último Vehículo</button><br><br>
 							
-<!-- Campo para el Operador -->
-<label for="operador">Operador:</label>
-<input class="input" type="text" id="operador" name="operador" required>
-<datalist id="operadorDataList">
-</datalist>
+							<label for="operador">Operador:</label>
+							<input class="input" type="text" id="operador" name="operador" required>
+							<datalist id="operadorDataList">
+							</datalist>
 			
-							<!-- Campo para la ubicación -->
 							<label for="ubicacion">CGM:</label>
 							<select class="input" id="ubicacion" name="ubicacion" required>
-								<option value="">SELECCIONAR</option>
+								<option value="">LIMA</option>
 								<option value=" - AREQUIPA">AREQUIPA</option>
 								<option value=" - PIURA">PIURA</option>
 								<option value=" - JUNIN">JUNIN</option>
-								<option value="">LIMA</option>
 							</select><br>
 							<div class="button-container">
-							<button class="button2" type="button" onclick="generarReporte()"><img src="img/generar.png" width:"50px" height="50px">Generar Reporte</button>
-							<button class="button2" type="button" onclick="limpiarFormulario()"><img src="img/limpiar.svg" width:"50px" height="50px">Limpiar Formulario</button>
+							<button class="button2" type="button" onclick="generarReporte()"><img src="img/generar.png" width="50px" height="50px">Generar Reporte</button>
+							<button class="button2" type="button" onclick="limpiarFormulario()"><img src="img/limpiar.svg" width="50px" height="50px">Limpiar Formulario</button>
 							</div>
 						</form>	
 					</div>
