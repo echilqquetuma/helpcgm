@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Traveler by freehtml5.co
-	Twitter: http://twitter.com/fh5co
-	URL: http://freehtml5.co
--->
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -48,6 +43,9 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+    <!-- Tu archivo custom-styles.css si tienes estilos específicos para esta app -->
+    <link rel="stylesheet" href="css/custom-styles-report.css"> 
+
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -55,7 +53,8 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-    <script defer src="js/script2.js"></script>
+    <!-- Ahora cargamos nuestro script.js principal -->
+    <script defer src="js/plantillas.js"></script> 
 	</head>
 	<body>
 		
@@ -105,114 +104,111 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>EN CONSTRUCCION</h2>
-					<p>LOS FORMATOS ESTAN FUNCIONANDO PROXIMAMENTE MAS PLANTILLAS</p>
+					<h2>GENERA TUS REPORTES</h2>
+					<p>Configura tu alarma para que no te olvides de hacer tu reporte</p>
 				</div>
 			</div>
 
-					<div class="col-md-6 animate-box2">
-						<div id="trafficForm" class="form-container">
-							<h2>Estado de Tráfico</h2>
-							<label for="operatorName">Nombre del Operador:</label>
-							<input type="text" id="operatorName">
-							<label for="zoneSelector">Zona:</label>
-							<select id="zoneSelector">
-								<option value="Zona Norte">Zona Norte</option>
-								<option value="Zona Centro">Zona Centro</option>
-								<option value="Zona Sur">Zona Sur</option>
-							</select>
-							<label for="cgmSelector">CGM:</label>
-							<select id="cgmSelector">
-								<option value="Lima">Lima</option>
-								<option value="Arequipa">Arequipa</option>
-								<option value="Piura">Piura</option>
-								<option value="Junin">Junín</option>
-							</select>
-							<button id="submitTrafficForm">Enviar</button>
-							<textarea id="outputMessage" readonly></textarea>
+            <!-- Nueva sección para la Configuración de Alarmas -->
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center animate-box">
+                    <div class="alarm-settings-container report-generator-container">
+                        <h3>Configuración de Alarmas</h3>
+                        
+                        <div class="input-group-alarm">
+                            <input type="checkbox" id="enableAlarmSCMF">
+                            <label for="enableAlarmSCMF">Activar Alarma para Reporte SCMF</label>
+                            <select id="intervalSCMF" class="alarm-interval-select">
+                                <option value="1">Cada 1 hora</option>
+                                <option value="2">Cada 2 horas</option>
+                                <option value="4">Cada 4 horas</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group-alarm">
+                            <input type="checkbox" id="enableAlarmTrafico">
+                            <label for="enableAlarmTrafico">Activar Alarma para Reporte de Tráfico</label>
+                            <select id="intervalTrafico" class="alarm-interval-select">
+                                <option value="1">Cada 1 hora</option>
+                                <option value="2">Cada 2 horas</option>
+                                <option value="4">Cada 4 horas</option>
+                            </select>
+                        </div>
+
+                        <button id="saveAlarmSettingsBtn" class="btn btn-primary">Guardar Configuración de Alarmas</button>
+                        <p id="alarmSaveMessage" style="color: green; margin-top: 10px;"></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin de la nueva sección de Alarmas -->
+
+            <!-- Separador visual -->
+            <div class="row">
+                <div class="col-md-12" style="margin-top: 40px; margin-bottom: 40px;"></div>
+            </div>
+
+
+            <!-- Contenedor principal para los formularios y la salida -->
+			<div class="row">
+				<div class="col-md-6 animate-box2">					
+					<!-- Formulario para REPORTE DE TRANSMISIÓN SCMF -->
+					<div class="report-generator-container">
+						<h1>Generador de Reporte SCMF</h1>
+
+						<div class="input-group">
+							<label for="operatorNameSCMF">Nombre del Operador:</label>
+							<input type="text" id="operatorNameSCMF" placeholder="Nombre del operador" list="operatorDataList">
+							<datalist id="operatorDataList"></datalist>
 						</div>
-					
-						<div id="transmissionsForm" class="form-container">
-							<h2>Estado de Transmisiones</h2>
-							<label for="operatorNameTransmissions">Nombre del Operador:</label>
-							<input type="text" id="operatorNameTransmissions">
-							<label for="cgmSelectorTransmissions">CGM:</label>
-							<select id="cgmSelectorTransmissions">
-								<option value="Lima">Lima</option>
+
+						<div class="input-group">
+							<label for="cgmLocationSCMF">Sede CGM:</label>
+							<select id="cgmLocationSCMF">
 								<option value="Arequipa">Arequipa</option>
-								<option value="Piura">Piura</option>
-								<option value="Junin">Junín</option>
-							</select>
-							<button id="submitTransmissionsForm">Enviar</button>
-							<textarea id="outputTransmissionsMessage" readonly></textarea>
-						</div>
-					
-						<div id="oficioForm" class="form-container">
-							<h2>Oficio</h2>
-							<label for="oficioNumber">Número de Oficio:</label>
-							<input type="text" id="oficioNumber">
-						
-							<label for="alertNumber">Número de Alerta:</label>
-							<input type="text" id="alertNumber">
-						
-							<label for="alertType">Tipo de Alerta:</label>
-							<select id="alertType">
-								<option value="Inicial">Alerta Inicial</option>
-								<option value="Final">Alerta Final</option>
-							</select>
-						
-							<label for="operatorNameOficio">Nombre del Operador:</label>
-							<input type="text" id="operatorNameOficio">
-						
-							<label for="cgmSelectorOficio">CGM:</label>
-							<select id="cgmSelectorOficio">
 								<option value="Lima">Lima</option>
-								<option value="Arequipa">Arequipa</option>
+								<option value="Junín">Junín</option>
 								<option value="Piura">Piura</option>
-								<option value="Junin">Junín</option>
 							</select>
-						
-							<button id="submitOficioForm">Enviar</button>
-							<textarea id="outputOficioMessage" readonly></textarea>
 						</div>
-					
-						<div id="shiftForm" class="form-container">
-							<h2>Inicio/Fin de Turno</h2>
 						
-							<label for="shiftType">Turno:</label>
-							<select id="shiftType">
-								<option value="Mañana">Turno Mañana</option>
-								<option value="Tarde">Turno Tarde</option>
-							</select>
-						
-							<label for="modality">Modalidad:</label>
-							<select id="modality">
-								<option value="Presencial">Presencial</option>
-								<option value="Remoto">Remoto</option>
-							</select>
-						
-							<label for="operatorNameShift">Nombre del Operador:</label>
-							<input type="text" id="operatorNameShift">
-						
-							<label for="cgmSelectorShift">CGM:</label>
-							<select id="cgmSelectorShift">
-								<option value="Lima">Lima</option>
-								<option value="Arequipa">Arequipa</option>
-								<option value="Piura">Piura</option>
-								<option value="Junin">Junín</option>
-							</select>
-						
-							<button id="submitShiftForm">Enviar</button>
-							<textarea id="outputShiftMessage" readonly></textarea>
-						</div>
-						</form>	
+						<button id="generateSCMFReportBtn">Generar Reporte SCMF</button>
 					</div>
-		</div>
+
+                    <!-- Espacio entre formularios si se desea -->
+                    <div style="margin-top: 40px;"></div>
+
+					<!-- Formulario para MONITOREO DE TRÁFICO -->
+					<div class="report-generator-container">
+						<h1>Generador de Reporte de Tráfico</h1>
+
+						<div class="input-group">
+							<label for="operatorNameTrafico">Nombre del Operador:</label>
+							<input type="text" id="operatorNameTrafico" placeholder="Nombre del operador" list="operatorDataList">
+						</div>
+
+						<div class="input-group">
+							<label for="traficoZoneSelect">Zona de Monitoreo:</label>
+							<select id="traficoZoneSelect">
+								<option value="traficoSur">Zona Sur (Arequipa)</option>
+								<option value="traficoNorte">Zona Norte (Piura)</option>
+								<option value="traficoCentro">Zona Centro (Junín)</option>
+							</select>
+						</div>
+						
+						<button id="generateTraficoReportBtn">Generar Reporte de Tráfico</button>
+					</div>
+				</div>
+
+                <!-- Aquí se insertará la parte de visualización y copia del reporte (única para ambos) -->
 				<div class="col-md-6 animate-box">
 					<h1>FORMATO COMPLETO</h1>
-					<pre id="resultado"></pre>
-					<button type="button" onclick="copiarContenido()">Copiar Contenido</button>
+                    <div class="report-output-container-in-template"> <!-- Nuevo contenedor con estilos adaptados -->
+                        <pre id="report-text"></pre>
+                        <button id="copyReportBtn" class="copy-button">Copiar Texto</button>
+                    </div>
 				</div>
+			</div>
+
 
 	<footer id="gtco-footer" role="contentinfo">
 		<div class="gtco-container">
@@ -291,4 +287,3 @@
 
 	</body>
 </html>
-
