@@ -1,5 +1,9 @@
 <!DOCTYPE HTML>
-
+<!--
+	Traveler by freehtml5.co
+	Twitter: http://twitter.com/fh5co
+	URL: http://freehtml5.co
+-->
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -52,6 +56,10 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<script src="https://unpkg.com/docxtemplater@3.69.0/build/docxtemplater.js"></script>
+	<script src="https://unpkg.com/pizzip@3.2.0/dist/pizzip.js"></script>
+	<script defer src="js/plantilla_oficio_data.js"></script>
+	<script defer src="js/hitos_vial_data.js"></script>
 	<script defer src="js/script.js"></script>
 	</head>
 	<body>
@@ -116,38 +124,41 @@
 					<div class="price-box popular">
 						<h2>Datos del Accidente</h2>
 						<label for="tipoAlerta">Tipo de Alerta:</label>
-						<select class="styled-select" id="tipoAlerta" name="tipoAlerta" required>
+						<select class="input" id="tipoAlerta" name="tipoAlerta" required>
 							<option value="ALERTA DE ACCIDENTE">ALERTA DE ACCIDENTE</option>
 							<option value="ALERTA DE ACCIDENTE INFORMATIVA">ALERTA DE ACCIDENTE INFORMATIVA</option>
 							<option value="ALERTA DE ASALTO">ALERTA DE ASALTO</option>
 						</select><br>
 		
 						<label for="numeroAlerta">Codigo de Alerta:</label>
-						<input class="input" type="text" id="numeroAlerta" name="numeroAlerta" required>
+						<input class="input" type="text" id="numeroAlerta" name="numeroAlerta" data-tip="Solo digita el número de alerta" required>
+
 						<label for="colorAlerta">Color de Alerta:</label>
-						<select class="styled-select" id="colorAlerta" name="colorAlerta" required>
+						<select class="input" id="colorAlerta" name="colorAlerta" required>
+							<option value=""> </option>
 							<option value="rojo">🔴</option>
 							<option value="naranja">🟠</option>
 							<option value="amarillo">🟡</option>
 						</select><br>
 		
 						<label for="versionAlerta">Versión de Alerta:</label>
-						<input class="input" type="text" id="versionAlerta" name="versionAlerta" value="1" required><br>
+						<input class="input input-small" type="text" id="versionAlerta" name="versionAlerta" value="1" required><br>
 						<label for="consecuenciaAlerta">Consecuencias:</label>
-						<select class="styled-select" id="consecuenciaAlerta" name="consecuenciaAlerta" required>
+						<select class="input" id="consecuenciaAlerta" name="consecuenciaAlerta" required>
+							<option value=""> </option>
 							<option value="con consecuencias">Con Consecuencias</option>
 							<option value="sin consecuencias">Sin Consecuencias</option>
 						</select><br>
 		
 						<div id="fallecidos">
 							<label>Fallecidos:</label>
-							<input class="input" type="number" id="numFallecidos" name="numFallecidos" min="0" value="0">
-							<button type="button" onclick="agregarFallecido()"><img src="img/fallecido.svg" width="15px" height="15px">Agregar Fallecido</button>
+							<input class="input input-small" type="number" id="numFallecidos" name="numFallecidos" min="0" value="0">
+							<button type="button" class="button-small" onclick="agregarFallecido()"><img src="img/fallecido.png" width="20px" height="20px">Agregar Fallecido</button>
 						</div>
 						<div id="heridos">
 							<label>Heridos:</label>
-							<input class="input" type="number" id="numHeridos" name="numHeridos" min="0" value="0">
-							<button type="button" onclick="agregarHerido()"><img src="img/herido.svg" width="15px" height="15px">Agregar Herido</button>
+							<input class="input input-small" type="number" id="numHeridos" name="numHeridos" min="0" value="0">
+							<button type="button" class="button-small" onclick="agregarHerido()"><img src="img/herido.png" width="20px" height="20px">Agregar Herido</button>
 						</div>  
 
 						<label for="modalidad">Modalidad:</label>
@@ -158,43 +169,50 @@
 						<input class="input" type="date" id="fechaConocimiento" name="fechaConocimiento" required>
 						<label for="horaConocimiento">Hora Conocimiento:</label>
 						<input class="input" type="time" id="horaConocimiento" name="horaConocimiento" required><br>
+						<div class="form-inline">
 						<label for="fuenteConocimiento">Fuente Conocimiento:</label>
-						<input class="input" class="input" type="text" id="fuenteConocimiento" name="fuenteConocimiento" value="FACEBOOK- " required><br>
+						<input class="input input-full" type="text" id="fuenteConocimiento" name="fuenteConocimiento" value="FACEBOOK - " data-tip="El formato deberia ser Facebook - Pagina - link de la noticia" required><br>
+						</div>
 						<label for="fechaAccidente">Fecha Accidente:</label>
 						<input class="input" type="date" id="fechaAccidente" name="fechaAccidente" required>
 						<label for="horaAccidente">Hora Accidente:</label>
 						<input class="input" type="time" id="horaAccidente" name="horaAccidente" required><br>
+						<div class="form-inline">
 						<label for="fuenteAccidente">Fuente Accidente:</label>
-						<input class="input" type="text" id="fuenteAccidente" name="fuenteAccidente" value="TOMA CONOCIMIENTO PNP " required><br>
-						<label for="coordenadas">Coordenadas:</label>
-						<input class="input" type="text" id="coordenadas" name="coordenadas" required><br>
-						                        
+						<input class="input input-full" type="text" id="fuenteAccidente" name="fuenteAccidente" value="TOMA CONOCIMIENTO PNP " required><br>
+						</div>
+							<label for="coordenadas">Coordenadas:</label>
+							<input class="input" type="text" id="coordenadas" name="coordenadas" data-tip="Para que te funcione el boton Generar Link el formato de las coordenadas dee ser -xx.xxxx, -xx.xxxx" required>
+							<button type="button" class="button-small" onclick="generarLinkCoordenadas()"><img src="img/link.png" width="15px" height="15px"> Generar Link</button><br>
+                      
 						<div class="button-container-ubicacion" style="margin-top: 10px; margin-bottom: 10px;">
-                            <button type="button" class="button-small" id="btnUbicacionCiudad" onclick="mostrarCamposUbicacion('ciudad')">En Ciudad</button>
-                            <button type="button" class="button-small" id="btnUbicacionCarretera" onclick="mostrarCamposUbicacion('carretera')">En Carretera</button>
+                            <button type="button" class="button-small" id="btnUbicacionCiudad" onclick="mostrarCamposUbicacion('ciudad')"><img src="img/ciudad.png" width="30px" height="30px"> En Ciudad</button>
+                            <button type="button" class="button-small" id="btnUbicacionCarretera" onclick="mostrarCamposUbicacion('carretera')"><img src="img/carretera.png" width="30px" height="30px"> En Carretera</button>
                         </div>
 
                         <div id="camposUbicacionDinamicos">
                         </div>
-                        
-						<label for="distrito">Distrito:</label>
-						<input class="input" type="text" id="distrito" name="distrito" required>
-						<label for="provincia">Provincia:</label>
-						<input class="input" type="text" id="provincia" name="provincia" required><br>
-						<label for="region">Departamento:</label>
-						<input class="input" type="text" id="region" name="region" required><br>
+						<label for="distrito">Distrito</label>
+						<input class="input input-small" type="text" id="distrito" name="distrito" required>
+						<label for="provincia">Provincia</label>
+						<input class="input input-small" type="text" id="provincia" name="provincia" required><br>
+						<label for="region">Departamento</label>
+						<input class="input input-small" type="text" id="region" name="region" required><br>
+						<div class="form-inline">
 						<label for="link">Link:</label>
-						<input class="input" type="text" id="link" name="link" required><br>
+							<input class="input input-full" type="text" id="link" name="link" data-tip="Usa el boton Ver en Maps para copiar el Link mas largo y pegalo aqui por si quieres" required>
+							<button type="button" class="button-small" onclick="abrirLinkMaps()"><img src="img/maps.png" width="15px" height="15px"> Ver en Maps</button><br>
+						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="price-box popular">
 						<h2>Vehículos Involucrados</h2>
                 		<div class="button-container centered-buttons">
-                    	<button class="button2" type="button" id="mercancias" onclick="addVehicle('mercancias')"><img src="img/remolque.svg" width="30px" height="30px">MERCANCIAS</button>
-                    	<button class="button2" type="button" id="pasajeros" onclick="addVehicle('pasajeros')"><img src="img/bus.svg" width="30px" height="30px">PASAJEROS</button>
-                    	<button class="button2" type="button" id="particular" onclick="addVehicle('particular')"><img src="img/particular.svg" width="30px" height="30px">PARTICULAR</button>
-                    	<button class="button2" type="button" id="internacional" onclick="addVehicle('internacional')"><img src="img/internacional.svg" width="30px" height="30px">INTERNACIONAL</button>
+                    	<button class="button2" type="button" id="mercancias" onclick="addVehicle('mercancias')"><img src="img/remolque.png" width="30px" height="30px">  MERCANCIAS</button>
+                    	<button class="button2" type="button" id="pasajeros" onclick="addVehicle('pasajeros')"><img src="img/bus.png" width="30px" height="30px">  PASAJEROS</button>
+                    	<button class="button2" type="button" id="particular" onclick="addVehicle('particular')"><img src="img/particular.png" width="30px" height="30px">  PARTICULAR</button>
+                    	<button class="button2" type="button" id="internacional" onclick="addVehicle('internacional')"><img src="img/internacional.png" width="30px" height="30px">  INTERNACIONAL</button>
                 		</div>
                 		<div id="vehicleContainer"></div><br>
 					</div>
@@ -205,24 +223,29 @@
 						<label for="detalle">Detalle:</label>
 						<textarea id="detalle" name="detalle" rows="4" required>A CONSECUENCIA DEL ACCIDENTE SE REPORTARON DAÑOS MATERIALES, LOS MISMOS QUE SE ENCUENTRAN SUJETO A PERITAJE TÉCNICO POLICIAL. LAS INVESTIGACIONES DE LAS CAUSAS DEL ACCIDENTE ESTÁN A CARGO DE LA CPNP.</textarea><br>                
 						<div class="button-container centered-buttons">
-							<button class="button2" type="button" id="comisaria" onclick="addComisaria()"><img src="img/comisaria.svg" width="30px" height="30px">COMISARIA</button>
-							<button class="button2" type="button" id="fuente" onclick="addFuente()"><img src="img/fuente.svg" width="30px" height="30px">FUENTE</button>
+							<button class="button2" type="button" id="comisaria" onclick="addComisaria()"><img src="img/comisaria.png" width="30px" height="30px">COMISARIA</button>
+							<button class="button2" type="button" id="fuente" onclick="addFuente()"><img src="img/fuente.png" width="30px" height="30px">FUENTE</button>
 						</div>
 						<div id="comisariaContainer"></div><br>
 						<div id="fuenteContainer"></div><br>
-						<label for="nombreOperador">Nombre del Operador:</label>
-						<input class="input" type="text" id="nombreOperador" name="nombreOperador" required><br>
+								
+						<label for="nombreOperador">OPERADOR</label>
+						<input class="input" type="text" id="nombreOperador" name="nombreOperador" required>
 						<datalist id="nombreOperadorDataListAF"></datalist>
 						<label for="cgm">CGM:</label>
-						<select class="styled-select" id="cgm" name="cgm">
+						<select class="input" id="cgm" name="cgm" required>
+							<option value=""> </option>
 							<option value="">Lima</option>
 							<option value=" - Arequipa">Arequipa</option>
 							<option value=" - Piura">Piura</option>
 							<option value=" - Junin">Junin</option>
+							<option value=" - Huamachuco">Huamachuco</option>
 						</select><br><br>
+						
 						<div class="button-container centered-buttons">
 							<button class="button2" type="submit"><img src="img/generar.png" width="50px" height="50px">GENERAR ALERTA</button>
 							<button class="button2" type="button" onclick="limpiarFormulario()"><img src="img/limpiar.svg" width="50px" height="50px">LIMPIAR FORMULARIO</button>
+							<button class="button2" type="button" onclick="generarOficio()"><img src="img/oficio.png" width="50px" height="50px">GENERAR OFICIO</button>
 						</div>
 					</div>
 				</div>
@@ -329,4 +352,3 @@
 
 	</body>
 </html>
-
