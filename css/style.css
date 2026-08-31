@@ -574,13 +574,13 @@ h1, h2, h3, h4, h5, h6, figure {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 .gtco-social-icons li a {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   color: #09C6AB;
   padding-left: 10px;
   padding-right: 10px;
@@ -1017,7 +1017,7 @@ form label {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 #gtco-footer .footer-logo span {
   color: #09C6AB;
@@ -1908,4 +1908,128 @@ form label {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+.form-tooltip {
+    position: absolute;
+    transform: translate(-50%, calc(-100% - 15px));
+    background-color: rgb(2 22 36);
+    color: #ffffff;
+    text-align: center;
+    border: 1px solid #00c1d5;
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    pointer-events: none;
+    max-width: 220px;
+    box-shadow: 0px 6px 30px rgb(2 22 36);
+}
+.form-tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, calc(-100% - 8px));
+}
+.form-tooltip::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: #00c1d5;
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    margin-left: -7.5px;
+    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+    z-index: -1;
+}
+
+.button2 {
+  background-color: #eee;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  color: #0a7c8a;
+  font-weight: bold;
+  box-shadow: 0 0.4rem #b3e8ef;
+  cursor: pointer;
+}
+.button2:active {
+  color: white;
+  box-shadow: 0 0.2rem #b3e8ef;
+  transform: translateY(0.2rem);
+}
+.button2:hover:not(:disabled) {
+  background: rgb(2 22 36);
+  color: white;
+  text-shadow: 0 0.1rem #01121d;
+}
+.button2:disabled {
+  cursor: auto;
+  color: grey;
+}
+
+.button-small {
+  border: 1px solid #333333;
+  outline: none;
+  background-color: #ffffff;
+  padding: 3px 15px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #000000;
+  border-radius: 5px;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px #00c1d5;
+  cursor: pointer;
+}
+.button-small:hover {
+  background-color: #f2f2f2;
+}
+.button-small:active {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px #00c1d5;
+}
+
+.button-danger {
+  border: 1px solid #e57373;
+  outline: none;
+  background-color: #ffffff;
+  padding: 3px 15px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #c0392b;
+  border-radius: 5px;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px #ef9a9a;
+  cursor: pointer;
+}
+.button-danger:hover {
+  background-color: #fdecea;
+}
+.button-danger:active {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px #ef9a9a;
+}
+
+.button-success {
+  border: 1px solid #66bb6a;
+  outline: none;
+  background-color: #ffffff;
+  padding: 3px 15px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #2e7d32;
+  border-radius: 5px;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px #a5d6a7;
+  cursor: pointer;
+}
+.button-success:hover {
+  background-color: #eaf7eb;
+}
+.button-success:active {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px #a5d6a7;
+}
